@@ -1,5 +1,7 @@
 from urllib import request
+from time import time
 import json
+from game import Game, Team
 
 
 def loop(a):
@@ -20,39 +22,92 @@ def popTypes(a, types):
 
 
 def process(event):
+    game1 = Game(event)
     event_info = []
     # top line
-    game_description = event['status']['type']['description']
-    if game_description in ['Delayed', 'Final']:
-        game_detail = game_description + "/" + str(event['status']['period'])
+    if game1.description in ['Delayed', 'Final']:
+        game_detail = game1.description + "/" + str(game1.period)
     else:
-        game_detail = event['status']['type']['detail']
+        game_detail = game1.detail
 
-    if event['status']['type']['state'] != 'pre':
-        game_detail = add_whitespace(game_detail, 14) + "R  H  E"
+    mid_line = process_team(game1.awayTeam)
+    bottom_line = process_team(game1.homeTeam)
 
-    teams = event['competitions'][0]['competitors']
-    away = teams[1]
-    home = teams[0]
-    print(game_detail)
-    print(process_team(away))
-    print(process_team(home))
-    print()
-    event_info.append(game_detail)
-    event_info.append(process_team(away))
-    event_info.append(process_team(home))
+    if game1.state != 'pre':
+        game_detail = add_whitespace(game_detail, 14) + "R  H  E  "
+    else:
+        game_detail = game1.date
+
+    if game1.hasOdds:
+        if game1.awayTeam.abbrev in game1.moneyline:
+            mid_line, bottom_line = process_odds(mid_line, bottom_line, game1)
+
+        elif game1.homeTeam.abbrev in game1.moneyline:
+            bottom_line, mid_line = process_odds(bottom_line, mid_line, game1)
+
+    top_line = add_whitespace(game_detail, 23)
+
+    top_line, mid_line, bottom_line = ball_strike_out(
+        top_line, mid_line, bottom_line, game1)
+
+    top_line, mid_line, bottom_line = bases_loaded(
+        top_line, mid_line, bottom_line, game1)
+
+    event_info.append(top_line)
+    event_info.append(mid_line)
+    event_info.append(bottom_line)
     return event_info
 
 
+def ball_strike_out(top, mid, bottom, game):
+    top = (
+        top + "  B:" + (u"\u25CF" * game.balls) +
+        (u"\u25CB" * (4 - game.balls)))
+    mid = (
+        mid + "  S:" +
+        u"\u25CF" * game.strikes + u"\u25CB" * (3 - game.strikes))
+    bottom = (
+        bottom + "  O:" + u"\u25CF" * game.outs + u"\u25CB" * (3 - game.outs))
+
+    return (
+        add_whitespace(top, 32),
+        add_whitespace(mid, 32),
+        add_whitespace(bottom, 32))
+
+
+def bases_loaded(top, mid, bottom, game):
+    top = top + "  " + on_base(game.secondBase) + "  "
+    mid = mid + on_base(game.thirdBase) + "   " + on_base(game.firstBase)
+    bottom = bottom + "  " + on_base(False) + "  "
+    return top, mid, bottom
+
+
+def on_base(boolean):
+    if boolean:
+        return u"\u25FC"
+    else:
+        return u"\u25FB"
+
+
+def process_odds(favorite, dog, game):
+    favorite = add_whitespace(
+        add_whitespace(favorite.strip(), 14) +
+        game.moneyline[3:].strip(), 23)
+    dog = add_whitespace(
+        add_whitespace(dog.strip(), 14) +
+        "O/U:" + str(game.overUnder), 23)
+    return favorite, dog
+
+
 def process_team(team):
-    t = add_whitespace(team['team']['name'], 14)
-    try:
-        runs = add_whitespace(str(team['score']), 3)
-        hits = add_whitespace(str(team['hits']), 3)
-        errors = add_whitespace(str(team['errors']), 3)
+    t = add_whitespace(team.name, 14)
+    if not(team.runs is None or team.hits is None or team.errors is None):
+        runs = add_whitespace(str(team.runs), 3)
+        hits = add_whitespace(str(team.hits), 3)
+        errors = add_whitespace(str(team.errors), 3)
         return t + runs + hits + errors
-    except KeyError:
-        return t
+    else:
+        return add_whitespace(t, 23)
 
 
 # If the string is longer than length nothing is added
@@ -60,36 +115,37 @@ def add_whitespace(string, length):
     return string + ((length - len(string)) * " ")
 
 
-aRequest = request.urlopen(
-    'http://cdn.espn.com/core/mlb/scoreboard?xhr=1&render=true&' +
-    'device=desktop&country=us&lang=en&region=us&site=espn&' +
-    'edition-host=espn.com&site-type=full')
-j = json.loads(aRequest.read().decode('utf-8'))
+if __name__ == '__main__':
+    aRequest = request.urlopen(
+        'http://cdn.espn.com/core/mlb/scoreboard?xhr=1&render=true&' +
+        'device=desktop&country=us&lang=en&region=us&site=espn&' +
+        'edition-host=espn.com&site-type=full')
+    rawJson = json.loads(aRequest.read().decode('utf-8'))
 
-co = j['content']
-group = co['sbGroup']
-data = co['sbData']
-events = data['events']
-e = events[8]
-c = e['competitions'][0]
-types = [str, bool, int]
+    with open('files/' + str(int(time())) + '.json' , 'w+') as file:
+        json.dump(rawJson, file)
+
+    co = rawJson['content']
+    group = co['sbGroup']
+    data = co['sbData']
+    events = data['events']
 
 
-teams = c['competitors']  # This is a list of both teams
-t = teams[0]
-t.pop('probables')
-t.pop('uid')
-t.pop('id')
-t.pop('type')
-t.pop('order')
+    events = sorted(
+        events, key=lambda x: x['competitions'][0]['status']['type']['state'])
+    events_to_print = []
+    for e in events:
+        events_to_print.append(process(e))
 
-# figure out what t['order'] is
-
-events = sorted(events, key=lambda x: x['competitions'][0]['status']['type']['state'])
-events_to_print = []
-for e in events:
-    events_to_print.append(process(e))
-
+    i = 0
+    while i + 1 < len(events_to_print):
+        for j in range(3):
+            print("  |  ".join([i[j] for i in events_to_print[i:i + 2]]))
+        print()
+        i += 2
+    if i < len(events_to_print):
+        for j in range(3):
+            print(events_to_print[i][j])
 
 ''' for baseball things to care about
  group has the page title which could be used as a header
