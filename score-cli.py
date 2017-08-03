@@ -20,9 +20,44 @@ def popTypes(a, types):
 
 
 def process(event):
-    print(event['competitions'][0]['competitors'][0]['team']['abbreviation'])
-    print(event['competitions'][0]['competitors'][1]['team']['abbreviation'])
+    event_info = []
+    # top line
+    game_description = event['status']['type']['description']
+    if game_description in ['Delayed', 'Final']:
+        game_detail = game_description + "/" + str(event['status']['period'])
+    else:
+        game_detail = event['status']['type']['detail']
 
+    if event['status']['type']['state'] != 'pre':
+        game_detail = add_whitespace(game_detail, 14) + "R  H  E"
+
+    teams = event['competitions'][0]['competitors']
+    away = teams[1]
+    home = teams[0]
+    print(game_detail)
+    print(process_team(away))
+    print(process_team(home))
+    print()
+    event_info.append(game_detail)
+    event_info.append(process_team(away))
+    event_info.append(process_team(home))
+    return event_info
+
+
+def process_team(team):
+    t = add_whitespace(team['team']['name'], 14)
+    try:
+        runs = add_whitespace(str(team['score']), 3)
+        hits = add_whitespace(str(team['hits']), 3)
+        errors = add_whitespace(str(team['errors']), 3)
+        return t + runs + hits + errors
+    except KeyError:
+        return t
+
+
+# If the string is longer than length nothing is added
+def add_whitespace(string, length):
+    return string + ((length - len(string)) * " ")
 
 
 aRequest = request.urlopen(
@@ -35,14 +70,10 @@ co = j['content']
 group = co['sbGroup']
 data = co['sbData']
 events = data['events']
-e = events[0]
+e = events[8]
 c = e['competitions'][0]
 types = [str, bool, int]
-popTypes(c, types)
-c.pop('notes')
-c.pop('leaders')
-c.pop('broadcasts')
-c.pop('geoBroadcasts')
+
 
 teams = c['competitors']  # This is a list of both teams
 t = teams[0]
@@ -54,9 +85,10 @@ t.pop('order')
 
 # figure out what t['order'] is
 
-
+events = sorted(events, key=lambda x: x['competitions'][0]['status']['type']['state'])
+events_to_print = []
 for e in events:
-    process(e)
+    events_to_print.append(process(e))
 
 
 ''' for baseball things to care about
