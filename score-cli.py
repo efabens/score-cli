@@ -122,8 +122,8 @@ if __name__ == '__main__':
         'edition-host=espn.com&site-type=full')
     rawJson = json.loads(aRequest.read().decode('utf-8'))
 
-    with open('files/' + str(int(time())) + '.json' , 'w+') as file:
-        json.dump(rawJson, file)
+    # with open('files/' + str(int(time())) + '.json' , 'w+') as file:
+    #     json.dump(rawJson, file)
 
     co = rawJson['content']
     group = co['sbGroup']
