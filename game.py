@@ -1,13 +1,13 @@
 from dateutil.parser import *
 
 
-class Game:
+class MLB_Game:
     def __init__(self, event):
         self.description = event['status']['type']['description']
         self.period = event['status']['period']
         c = event['competitions'][0]
-        self.homeTeam = Team(c['competitors'][0])
-        self.awayTeam = Team(c['competitors'][1])
+        self.homeTeam = MLB_Team(c['competitors'][0])
+        self.awayTeam = MLB_Team(c['competitors'][1])
         self.state = event['status']['type']['state']
         self.detail = event['status']['type']['detail']
         self.venue = c['venue']['fullName']
@@ -33,7 +33,7 @@ class Game:
         return "\n".join([str(i) for i in vars(Game)])
 
 
-class Team:
+class MLB_Team:
     ENDC = '\033[0m'
 
     def __init__(self, team):
@@ -70,8 +70,9 @@ class Team:
             self.custom_text_color(color) + self.custom_background(alt) +
             self.name + self.ENDC)
 
-    colors = ({
-  "OAK": {
+    colors = (
+      {
+      "OAK": {
     "alt": (0, 72, 58),
     "color": (255, 190, 0)
   },

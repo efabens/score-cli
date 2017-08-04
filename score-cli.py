@@ -2,7 +2,7 @@ from urllib import request
 from time import time
 import json
 import os
-from game import Game
+from game import MLB_Game
 
 
 def loop(a):
@@ -23,7 +23,7 @@ def popTypes(a, types):
 
 
 def process(event):
-    game1 = Game(event)
+    game1 = MLB_Game(event)
     event_info = []
     # top line
     if game1.description in ['Delayed', 'Final']:
