@@ -40,8 +40,9 @@ class MLB_Team:
         self.name = team['team']['name']
         self.abbrev = team['team']['abbreviation']
         self.displayName = team['team']['displayName']
-        self.color = self.colors[self.abbrev]['color']
-        self.alternateColor = self.colors[self.abbrev]['alt']
+        color_vals = self.colors.get(self.abbrev, self.colors['STANDARD'])
+        self.color = color_vals['color']
+        self.alternateColor = color_vals['alt']
         self.runs = team.get('score', None)
         self.hits = team.get('hits', None)
         self.errors = team.get('errors', None)
@@ -72,6 +73,10 @@ class MLB_Team:
 
     colors = (
       {
+      "STANDARD": {
+    "alt": (0, 0, 0),
+    "color": (255, 255, 255)
+  },
       "OAK": {
     "alt": (0, 72, 58),
     "color": (255, 190, 0)
