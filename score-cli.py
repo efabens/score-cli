@@ -116,14 +116,18 @@ def add_whitespace(string, length, base=""):
 
 
 if __name__ == '__main__':
+    to_grab = 'soccer'
+
     aRequest = request.urlopen(
-        'http://cdn.espn.com/core/mlb/scoreboard?xhr=1&render=true&' +
+        'http://cdn.espn.com/core/' + to_grab +
+        '/scoreboard?xhr=1&render=true&' +
         'device=desktop&country=us&lang=en&region=us&site=espn&' +
         'edition-host=espn.com&site-type=full')
     rawJson = json.loads(aRequest.read().decode('utf-8'))
 
-    new_file = (os.path.realpath(__file__ + "/..") +
-        '/files/' + str(int(time())) + '.json')
+    new_file = (
+        os.path.realpath(__file__ + "/..") +
+        '/files/' + to_grab + str(int(time())) + '.json')
 
     with open(new_file, 'w+') as file:
         json.dump(rawJson, file)
