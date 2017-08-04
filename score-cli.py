@@ -1,7 +1,8 @@
 from urllib import request
 from time import time
 import json
-from game import Game, Team
+import os
+from game import Game
 
 
 def loop(a):
@@ -65,9 +66,10 @@ def ball_strike_out(top, mid, bottom, game):
         (u"\u25CB" * (4 - game.balls)))
     mid = (
         mid + "  S:" +
-        u"\u25CF" * game.strikes + u"\u25CB" * (3 - game.strikes))
+        u"\u25CF" * game.strikes + u"\u25CB" * (3 - game.strikes) + "  ")
     bottom = (
-        bottom + "  O:" + u"\u25CF" * game.outs + u"\u25CB" * (3 - game.outs))
+        bottom + "  O:" + u"\u25CF" * game.outs + u"\u25CB" * (3 - game.outs) +
+        "  ")
 
     return (
         add_whitespace(top, 32),
@@ -90,29 +92,27 @@ def on_base(boolean):
 
 
 def process_odds(favorite, dog, game):
-    favorite = add_whitespace(
-        add_whitespace(favorite.strip(), 14) +
-        game.moneyline[3:].strip(), 23)
-    dog = add_whitespace(
-        add_whitespace(dog.strip(), 14) +
-        "O/U:" + str(game.overUnder), 23)
+    favorite = favorite + add_whitespace(game.moneyline[3:].strip(), 9)
+    dog = dog + add_whitespace("O/U:" + str(game.overUnder), 9)
     return favorite, dog
 
 
 def process_team(team):
-    t = add_whitespace(team.name, 14)
+    t = add_whitespace(team.colorful_name(), 14, base=team.name)
     if not(team.runs is None or team.hits is None or team.errors is None):
         runs = add_whitespace(str(team.runs), 3)
         hits = add_whitespace(str(team.hits), 3)
         errors = add_whitespace(str(team.errors), 3)
         return t + runs + hits + errors
     else:
-        return add_whitespace(t, 23)
+        return t
 
 
 # If the string is longer than length nothing is added
-def add_whitespace(string, length):
-    return string + ((length - len(string)) * " ")
+def add_whitespace(string, length, base=""):
+    if base == "":
+        base = string
+    return string + ((length - len(base)) * " ")
 
 
 if __name__ == '__main__':
@@ -122,8 +122,14 @@ if __name__ == '__main__':
         'edition-host=espn.com&site-type=full')
     rawJson = json.loads(aRequest.read().decode('utf-8'))
 
-    # with open('files/' + str(int(time())) + '.json' , 'w+') as file:
-    #     json.dump(rawJson, file)
+    new_file = (os.path.realpath(__file__ + "/..") +
+        '/files/' + str(int(time())) + '.json')
+
+    with open(new_file, 'w+') as file:
+        json.dump(rawJson, file)
+
+    # with open("files/1501797864.json", 'r') as file:
+    #     rawJson = json.load(file)
 
     co = rawJson['content']
     group = co['sbGroup']
