@@ -2,7 +2,7 @@ from urllib import request
 from time import time
 import json
 import os
-from game import MLB_Game
+from mlb_game import MLB_Game
 
 
 def loop(a):
