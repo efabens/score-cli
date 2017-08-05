@@ -63,3 +63,17 @@ def custom_background(tup):
         str(tup[0]) + ";" +
         str(tup[1]) + ";" +
         str(tup[2]) + 'm')
+
+
+def print_events(events_to_print, width):
+    bigeventlist = []
+    for x, y in enumerate(events_to_print):
+        if x % width == 0:
+            small = []
+            bigeventlist.append(small)
+        small.append(y)
+
+    for i in bigeventlist:
+        for j in range(len(i[0])):
+            print("  |  ".join([x[j] for x in i]))
+        print()

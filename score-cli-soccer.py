@@ -4,7 +4,7 @@ from datetime import datetime
 from urllib import request
 
 from soccergame import SoccerGame
-from utility import add_whitespace, custom_text_color, custom_background, ENDC
+from utility import add_whitespace, custom_text_color, custom_background, ENDC, print_events
 
 
 def process(game_event):
@@ -104,16 +104,9 @@ if __name__ == '__main__':
         for e in events:
             events_to_print.append(process(e))
 
-        i = 0
-        while i + 1 < len(events_to_print):
-            for j in range(4):
-                print("  |  ".join([i[j] for i in events_to_print[i:i + 2]]))
-            print()
-            i += 2
-        if i < len(events_to_print):
-            for j in range(3):
-                print(events_to_print[i][j] + "  |")
-        print()
+        print_events(events_to_print, 3)
+
+
 
 ''' for baseball things to care about
  group has the page title which could be used as a header

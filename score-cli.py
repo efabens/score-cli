@@ -3,7 +3,7 @@ from time import time
 import json
 import os
 from mlbgame import MLBGame
-from utility import add_whitespace
+from utility import add_whitespace, print_events
 
 
 def process(event):
@@ -120,15 +120,8 @@ if __name__ == '__main__':
     for e in events:
         events_to_print.append(process(e))
 
-    i = 0
-    while i + 1 < len(events_to_print):
-        for j in range(3):
-            print("  |  ".join([i[j] for i in events_to_print[i:i + 2]]))
-        print()
-        i += 2
-    if i < len(events_to_print):
-        for j in range(3):
-            print(events_to_print[i][j])
+    print_events(events_to_print, 2)
+    print()
 
 ''' for baseball things to care about
  group has the page title which could be used as a header
