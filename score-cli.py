@@ -2,28 +2,12 @@ from urllib import request
 from time import time
 import json
 import os
-from mlb_game import MLB_Game
-
-
-def loop(a):
-    for i in a.keys():
-        print(i, type(a[i]))
-
-
-def printType(a, types):
-    for i in list(a.keys()):
-        if type(a[i]) in types:
-            print(i, a[i])
-
-
-def popTypes(a, types):
-    for i in list(a.keys()):
-        if type(a[i]) in types:
-            a.pop(i)
+from mlbgame import MLBGame
+from utility import add_whitespace
 
 
 def process(event):
-    game1 = MLB_Game(event)
+    game1 = MLBGame(event)
     event_info = []
     # top line
     if game1.description in ['Delayed', 'Final']:
@@ -66,15 +50,12 @@ def ball_strike_out(top, mid, bottom, game):
         (u"\u25CB" * (4 - game.balls)))
     mid = (
         mid + "  S:" +
-        u"\u25CF" * game.strikes + u"\u25CB" * (3 - game.strikes) + "  ")
+        u"\u25CF" * game.strikes + u"\u25CB" * (3 - game.strikes) + " ")
     bottom = (
         bottom + "  O:" + u"\u25CF" * game.outs + u"\u25CB" * (3 - game.outs) +
-        "  ")
+        " ")
 
-    return (
-        add_whitespace(top, 32),
-        add_whitespace(mid, 32),
-        add_whitespace(bottom, 32))
+    return top, mid, bottom
 
 
 def bases_loaded(top, mid, bottom, game):
@@ -108,21 +89,14 @@ def process_team(team):
         return t
 
 
-# If the string is longer than length nothing is added
-def add_whitespace(string, length, base=""):
-    if base == "":
-        base = string
-    return string + ((length - len(base)) * " ")
-
-
 if __name__ == '__main__':
-    to_grab = 'soccer'
+    to_grab = 'mlb'
 
     aRequest = request.urlopen(
         'http://cdn.espn.com/core/' + to_grab +
         '/scoreboard?xhr=1&render=true&' +
         'device=desktop&country=us&lang=en&region=us&site=espn&' +
-        'edition-host=espn.com&site-type=full')
+        'edition-host=espn.com&site-type=full&date=20170805')
     rawJson = json.loads(aRequest.read().decode('utf-8'))
 
     new_file = (
@@ -139,7 +113,6 @@ if __name__ == '__main__':
     group = co['sbGroup']
     data = co['sbData']
     events = data['events']
-
 
     events = sorted(
         events, key=lambda x: x['competitions'][0]['status']['type']['state'])
