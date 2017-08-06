@@ -15,8 +15,8 @@ class MLBGame(Game):
         self.secondBase = sit.get('onSecond', False)
         self.thirdBase = sit.get('onThird', False)
         if self.hasOdds:
-            self.moneyline = self.odds[0]['details']
-            self.overUnder = self.odds[0]['overUnder']
+            self.moneyline = self.odds[0].get('details', " ")
+            self.overUnder = self.odds[0].get('overUnder', " ")
 
 
 class MLBTeam(Team):

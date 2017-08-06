@@ -1,3 +1,4 @@
+from datetime import datetime
 from urllib import request
 from time import time
 import json
@@ -29,6 +30,9 @@ def process(event):
 
         elif game1.homeTeam.abbrev in game1.moneyline:
             bottom_line, mid_line = process_odds(bottom_line, mid_line, game1)
+
+        elif game1.moneyline == 'EVEN':
+            mid_line, bottom_line = process_odds(mid_line, bottom_line, game1)
 
     top_line = add_whitespace(game_detail, 23)
 
@@ -73,7 +77,10 @@ def on_base(boolean):
 
 
 def process_odds(favorite, dog, game):
-    favorite = favorite + add_whitespace(game.moneyline[3:].strip(), 9)
+    if game.moneyline == 'EVEN':
+        favorite = favorite + add_whitespace(game.moneyline, 9)
+    else:
+        favorite = favorite + add_whitespace(game.moneyline[3:].strip(), 9)
     dog = dog + add_whitespace("O/U:" + str(game.overUnder), 9)
     return favorite, dog
 
@@ -96,7 +103,8 @@ if __name__ == '__main__':
         'http://cdn.espn.com/core/' + to_grab +
         '/scoreboard?xhr=1&render=true&' +
         'device=desktop&country=us&lang=en&region=us&site=espn&' +
-        'edition-host=espn.com&site-type=full&date=20170805')
+        'edition-host=espn.com&site-type=full&date=' +
+        datetime.now().strftime('%Y%m%d'))
     rawJson = json.loads(aRequest.read().decode('utf-8'))
 
     co = rawJson['content']
