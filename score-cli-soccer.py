@@ -47,12 +47,15 @@ def process_team(team, state):
 if __name__ == '__main__':
     to_grab = 'soccer'
 
-    aRequest = request.urlopen(
+    aRequest = request.urlopen(request.Request(
         'http://cdn.espn.com/core/' + to_grab +
         '/scoreboard?xhr=1&render=true&' +
         'device=desktop&country=us&lang=en&region=us&site=espn&' +
         'edition-host=espn.com&site-type=full&date=' +
-        datetime.now().strftime('%Y%m%d'))
+        datetime.now().strftime('%Y%m%d'),
+        headers={
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko)' +
+                          ' Chrome/59.0.3071.115 Safari/537.36'}))
     rawJson = json.loads(aRequest.read().decode('utf-8'))
 
     co = rawJson['content']
