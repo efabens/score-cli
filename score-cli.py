@@ -1,8 +1,6 @@
 from datetime import datetime
 from urllib import request
-from time import time
 import json
-import os
 from mlbgame import MLBGame
 from utility import add_whitespace, print_events
 

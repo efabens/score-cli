@@ -1,4 +1,4 @@
-from dateutil.parser import *
+from dateutil.parser import parse
 import json
 
 
@@ -17,8 +17,8 @@ class Game:
             .strftime('%a %b %d, at %I:%M %p'))
         self.hasOdds = False
         if 'odds' in self.c:
-            with open('odds.json', 'w+') as file:
-                json.dump(self.c['odds'], file)
+            # with open('odds.json', 'w+') as file:
+            #     json.dump(self.c['odds'], file)
             self.odds = self.c['odds']
             self.hasOdds = True
 
