@@ -107,26 +107,4 @@ if __name__ == '__main__':
         for e in events:
             events_to_print.append(process(e))
 
-        print_events(events_to_print, 3)
-
-
-
-''' for baseball things to care about
- group has the page title which could be used as a header
-
-  e['weather']
-  c = e['competitions'][0]
-  c['situation'] current state/ last play
-  c['status'] inning
-  c['venue'] location
-  teams = c['competitors'] list of teams
-  t = teams[0] teams are at 0 for home and 1 for away
-  t['records'] maybe want
-  t['errors'] errors
-  t['hits'] hits
-  t['score'] errors
-  t['linescores'] inning by inning offensive scores per team
-  t['team']['displayName'] full name with city
-  t['team']['abbreviation'] Abbrev Name
-
-  '''
+        print_events(events_to_print, 2)
