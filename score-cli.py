@@ -14,8 +14,8 @@ def process(event):
     else:
         game_detail = game1.detail
 
-    mid_line = process_team(game1.awayTeam)
-    bottom_line = process_team(game1.homeTeam)
+    mid_line = process_team(game1.awayTeam, game1.state)
+    bottom_line = process_team(game1.homeTeam, game1.state)
 
     if game1.state != 'pre':
         game_detail = add_whitespace(game_detail, 14) + "R  H  E  "
@@ -36,7 +36,7 @@ def process(event):
 
     top_line, mid_line, bottom_line = ball_strike_out(
         top_line, mid_line, bottom_line, game1)
-
+    
     top_line, mid_line, bottom_line = bases_loaded(
         top_line, mid_line, bottom_line, game1)
 
@@ -83,9 +83,9 @@ def process_odds(favorite, dog, game):
     return favorite, dog
 
 
-def process_team(team):
+def process_team(team, state):
     t = add_whitespace(team.colorful_name(), 14, base=team.name)
-    if not(team.runs is None or team.hits is None or team.errors is None):
+    if state != "pre":
         runs = add_whitespace(str(team.runs), 3)
         hits = add_whitespace(str(team.hits), 3)
         errors = add_whitespace(str(team.errors), 3)
