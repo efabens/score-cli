@@ -1,6 +1,7 @@
 from game import Game, Team
 from utility import custom_text_color, custom_background, ENDC
 
+
 class BasketballGame(Game):
     def __init__(self, event):
         Game.__init__(self, event)
@@ -22,16 +23,19 @@ class BasketballTeam(Team):
         color = self.color
         alt = self.alternateColor
         return (
-                custom_text_color(color) + custom_background(alt) +
-                self.name + ENDC)
+            custom_text_color(color) + custom_background(alt) +
+            self.name + ENDC)
 
     def get_colors(self):
         color1 = Team.get_colors(self)
         nba_colors = {
             "POR": {"alt": (224, 58, 62), "color": (6, 25, 34)},
             "PHI": {"alt": (237, 23, 76), "color": (0, 107, 182)},
-            "TOR": {"alt": (117, 59, 189), "color": (138, 141, 143)},
-            "DEN": {"alt": (255, 198, 39), "color": (13, 34, 64)}
+            "TOR": {"alt": (161, 161, 164), "color": (206, 17, 65)},
+            "DEN": {"alt": (255, 198, 39), "color": (13, 34, 64)},
+            "GS": {"alt": (0, 107, 182), "color": (253, 185, 39)},
+            "HOU": {"alt": (206, 17, 65), "color": (6, 25, 34)},
+            "MIL": {"alt": (0, 71, 27), "color": (240, 235, 210)},
         }
         color1.update(nba_colors)
         return color1

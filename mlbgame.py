@@ -14,6 +14,7 @@ class MLBGame(Game):
         self.firstBase = sit.get('onFirst', False)
         self.secondBase = sit.get('onSecond', False)
         self.thirdBase = sit.get('onThird', False)
+        self.link = f'espn.com/mlb/game?gameId={event["id"]}'
         if self.hasOdds:
             self.moneyline = self.odds[0].get('details', " ")
             self.overUnder = self.odds[0].get('overUnder', " ")
@@ -28,6 +29,7 @@ class MLBTeam(Team):
         self.record = next(
             filter(
                 lambda x: x['type'] == 'total', team['records']))['summary']
+        self.division = self.get_league(self.abbrev)
 
     def colorful_name(self):
         color = self.color
@@ -72,3 +74,38 @@ class MLBTeam(Team):
         }
         color1.update(mlb_colors)
         return color1
+
+    def get_league(self, name):
+        leagues = {
+            "BAL": ["american", "east"],
+            "BOS": ["american", "east"],
+            "NYY": ["american", "east"],
+            "TB": ["american", "east"],
+            "TOR": ["american", "east"],
+            "ATL": ["national", "east"],
+            "MIA": ["national", "east"],
+            "NYM": ["national", "east"],
+            "PHI": ["national", "east"],
+            "WSH": ["national", "east"],
+            "CHW": ["american", "central"],
+            "CLE": ["american", "central"],
+            "DET": ["american", "central"],
+            "KC": ["american", "central"],
+            "MIN": ["american", "central"],
+            "CHC": ["national", "central"],
+            "CIN": ["national", "central"],
+            "MIL": ["national", "central"],
+            "PIT": ["national", "central"],
+            "STL": ["national", "central"],
+            "ARI": ["national", "west"],
+            "COL": ["national", "west"],
+            "LAD": ["national", "west"],
+            "SD": ["national", "west"],
+            "SF": ["national", "west"],
+            "HOU": ["american", "west"],
+            "LAA": ["american", "west"],
+            "OAK": ["american", "west"],
+            "SEA": ["american", "west"],
+            "TEX": ["american", "west"]
+        }
+        return leagues[name]

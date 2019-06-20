@@ -2,13 +2,15 @@ import json
 import os
 from datetime import datetime
 from urllib import request
+from argparse import ArgumentParser
+
 
 from soccergame import SoccerGame
 from utility import add_whitespace, custom_text_color, custom_background, ENDC, print_events
 
 
-def process(game_event):
-    game1 = SoccerGame(game_event)
+def process(game_event, config):
+    game1 = SoccerGame(game_event, config)
     event_info = []
     # print(game1.description, game1.period, game1.state, game1.detail)
     # top line
@@ -30,13 +32,15 @@ def process(game_event):
 
 
 def process_team(team, state):
-    t = add_whitespace(team.colorful_name(), 26, base=team.name)
+    t = add_whitespace(team.colorful_name(), 26,
+                       base=team.name)
 
     if state != 'pre':
 
         if team.winner:
             score = add_whitespace(
-                custom_background((255, 255, 255)) + custom_text_color((0, 0, 0)) + str(team.score) + ENDC, 3,
+                custom_background(
+                    (255, 255, 255)) + custom_text_color((0, 0, 0)) + str(team.score) + ENDC, 3,
                 base=str(team.score))
         else:
             score = add_whitespace(str(team.score), 3)
@@ -44,7 +48,13 @@ def process_team(team, state):
     else:
         return t + '   '
 
+
 if __name__ == '__main__':
+    parser = ArgumentParser(
+        description="prints out soccer scores. All data sourced from espn.com")
+    parser.add_argument('-l', '--leagues', dest="leagues_today", default=False, action='store_true', help="Lists the leagues "
+                        "that are have games today")
+    args = parser.parse_args()
     to_grab = 'soccer'
 
     aRequest = request.urlopen(request.Request(
@@ -82,10 +92,14 @@ if __name__ == '__main__':
     for i in skores:
         j = i['leagues'][0]
         midsize = j['midsizeName']
-        if midsize not in config_leagues:
+        if midsize not in config_leagues or args.leagues_today:
             config_changes = True
             print(print(j['name'], midsize))
-            to_display = input("display: y/n ")
+            if midsize in config_leagues:
+                to_display = input(
+                    f"display: y/n (curently {config_leagues[midsize]['to_display']})")
+            else:
+                to_display = input("display: y/n ")
             to_display = to_display[0] == 'y'
             config_leagues[midsize] = (
                 {'to_display': to_display, 'name': j['name']})
@@ -94,17 +108,16 @@ if __name__ == '__main__':
         with open(config_file, 'w+') as file:
             json.dump(config, file, indent=4, sort_keys=True)
 
-    if 'test' in config:
-        print('test')
-
-    to_print = [l for l in skores if config['soccer_leagues'][l['leagues'][0]['midsizeName']]['to_display']]
+    to_print = [l for l in skores if config['soccer_leagues']
+                [l['leagues'][0]['midsizeName']]['to_display']]
     for l in to_print:
         events_to_print = []
         events = sorted(
             l['events'], key=lambda x: x['competitions'][0]['status']['type']['state'])
         league_name = l['leagues'][0]['name']
-        print(custom_background((255, 255, 255)) + custom_text_color((0, 0, 0)) + league_name + ENDC)
+        print(custom_background((255, 255, 255)) +
+              custom_text_color((0, 0, 0)) + league_name + ENDC)
         for e in events:
-            events_to_print.append(process(e))
+            events_to_print.append(process(e, config))
 
         print_events(events_to_print, 2)

@@ -77,3 +77,22 @@ def print_events(events_to_print, width):
         for j in range(len(i[0])):
             print("  |  ".join([x[j] for x in i]))
         print()
+
+
+def stringify_events(events_to_print, width):
+    bigeventlist = []
+    for x, y in enumerate(events_to_print):
+        if x % width == 0:
+            small = []
+            bigeventlist.append(small)
+        small.append(y)
+    s = ""
+    for i in bigeventlist:
+        for j in range(len(i[0])):
+            s = s+"  |  ".join([x[j] for x in i]) + "\n"
+
+    return s
+
+
+def ansi_to_html(to_convert: str):
+    return to_convert.replace("\n", "<p>")

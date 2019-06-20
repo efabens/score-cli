@@ -3,10 +3,11 @@ from urllib import request
 import json
 from mlbgame import MLBGame
 from utility import add_whitespace, print_events
+from argparse import ArgumentParser
 
 
-def process(event):
-    game1 = MLBGame(event)
+def process(game1):
+
     event_info = []
     # top line
     if game1.description in ['Delayed', 'Final']:
@@ -36,13 +37,15 @@ def process(event):
 
     top_line, mid_line, bottom_line = ball_strike_out(
         top_line, mid_line, bottom_line, game1)
-    
+
     top_line, mid_line, bottom_line = bases_loaded(
         top_line, mid_line, bottom_line, game1)
 
     event_info.append(top_line)
     event_info.append(mid_line)
     event_info.append(bottom_line)
+    link = add_whitespace(game1.link, 36)
+    event_info.append(link)
     return event_info
 
 
@@ -94,7 +97,44 @@ def process_team(team, state):
         return t
 
 
+def filter_team(leagues, divisions, away, home, name):
+    if not leagues and not divisions and not name:
+        return True
+    filterHome = True
+    filterAway = True
+    if leagues:
+        filterAway = away.division[0] in leagues
+        filterHome = home.division[0] in leagues
+
+    if divisions:
+        filterAway = away.division[1] in divisions and filterAway
+        filterHome = home.division[1] in divisions and filterHome
+
+    nameMatch = True
+    if name:
+        nameMatch = name.lower() in (home.name + home.abbrev +
+                                     home.shortDisplayName).lower() or name.lower() in (away.name + away.abbrev + away.shortDisplayName).lower()
+    return (filterHome or filterAway) and nameMatch
+
+
 if __name__ == '__main__':
+    parser = ArgumentParser(
+        description="prints out mlb scores. All data sourced from espn.com")
+    parser.add_argument('-a', '--american', dest="leagues", action='append_const', const="american",
+                        help="Display American League")
+    parser.add_argument('-n', '--national', dest="leagues", action='append_const', const="national",
+                        help="Display National League")
+    parser.add_argument('-e', '--east', dest="divisions", action='append_const', const="east",
+                        help="Display Eastern Division, for both leagues if no league flag passed")
+    parser.add_argument('-c', '--central', dest="divisions", action='append_const', const="central",
+                        help="Display Eastern Division, for both leagues if no league flag passed")
+    parser.add_argument('-w', '--west', dest="divisions", action='append_const', const="west",
+                        help="Display Eastern Division, for both leagues if no league flag passed")
+
+    parser.add_argument('-s', "--search", dest="teamName", default="",
+                        help="Returns teams where a team name matches the provided value")
+    args = parser.parse_args()
+
     to_grab = 'mlb'
 
     aRequest = request.urlopen(
@@ -114,10 +154,11 @@ if __name__ == '__main__':
         events, key=lambda x: x['competitions'][0]['status']['type']['state'])
     events_to_print = []
     for e in events:
-        events_to_print.append(process(e))
+        game = MLBGame(e)
+        if filter_team(args.leagues, args.divisions, game.awayTeam, game.homeTeam, args.teamName):
+            events_to_print.append(process(game))
 
-    print_events(events_to_print, 2)
-    print()
+    print_events(events_to_print, 3)
 
 ''' for baseball things to care about
  group has the page title which could be used as a header
