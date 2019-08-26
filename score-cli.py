@@ -32,6 +32,11 @@ def process(game1):
 
         elif game1.moneyline == 'EVEN':
             mid_line, bottom_line = process_odds(mid_line, bottom_line, game1)
+        elif game1.moneyline == ' ':
+            mid_line = add_whitespace(
+                mid_line, 23, base=line_length(mid_line, game1.awayTeam))
+            bottom_line = add_whitespace(
+                bottom_line, 23, base=line_length(bottom_line, game1.homeTeam))
 
     top_line = add_whitespace(game_detail, 23)
 
@@ -47,6 +52,10 @@ def process(game1):
     link = add_whitespace(game1.link, 36)
     event_info.append(link)
     return event_info
+
+
+def line_length(line, team):
+    return " " * (len(line)-len(team.colorful_name())+len(team.name))
 
 
 def ball_strike_out(top, mid, bottom, game):
@@ -117,26 +126,12 @@ def filter_team(leagues, divisions, away, home, name):
     return (filterHome or filterAway) and nameMatch
 
 
-if __name__ == '__main__':
-    parser = ArgumentParser(
-        description="prints out mlb scores. All data sourced from espn.com")
-    parser.add_argument('-a', '--american', dest="leagues", action='append_const', const="american",
-                        help="Display American League")
-    parser.add_argument('-n', '--national', dest="leagues", action='append_const', const="national",
-                        help="Display National League")
-    parser.add_argument('-e', '--east', dest="divisions", action='append_const', const="east",
-                        help="Display Eastern Division, for both leagues if no league flag passed")
-    parser.add_argument('-c', '--central', dest="divisions", action='append_const', const="central",
-                        help="Display Eastern Division, for both leagues if no league flag passed")
-    parser.add_argument('-w', '--west', dest="divisions", action='append_const', const="west",
-                        help="Display Eastern Division, for both leagues if no league flag passed")
+def print_standings(args: str) -> None:
+    # Available options 'd' <- division, 'w' <- wildcard, 'l' <- league,  'm' <- mlb
+    print(args)
 
-    parser.add_argument('-s', "--search", dest="teamName", default="",
-                        help="Returns teams where a team name matches the provided value")
-    args = parser.parse_args()
 
-    to_grab = 'mlb'
-
+def print_scores(args: str) -> None:
     aRequest = request.urlopen(
         'http://cdn.espn.com/core/' + to_grab +
         '/scoreboard?xhr=1&render=true&' +
@@ -159,6 +154,33 @@ if __name__ == '__main__':
             events_to_print.append(process(game))
 
     print_events(events_to_print, 3)
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser(
+        description="prints out mlb scores. All data sourced from espn.com")
+    parser.add_argument('-a', '--american', dest="leagues", action='append_const', const="american",
+                        help="Display American League")
+    parser.add_argument('-n', '--national', dest="leagues", action='append_const', const="national",
+                        help="Display National League")
+    parser.add_argument('-e', '--east', dest="divisions", action='append_const', const="east",
+                        help="Display Eastern Division, for both leagues if no league flag passed")
+    parser.add_argument('-c', '--central', dest="divisions", action='append_const', const="central",
+                        help="Display Eastern Division, for both leagues if no league flag passed")
+    parser.add_argument('-w', '--west', dest="divisions", action='append_const', const="west",
+                        help="Display Eastern Division, for both leagues if no league flag passed")
+
+    parser.add_argument('-s', "--search", dest="teamName", default="",
+                        help="Returns teams where a team name matches the provided value")
+    parser.add_argument("-S", "--standings", dest="standings", nargs="?",
+                        const='d', action="store", help="Returns standings")
+
+    args = parser.parse_args()
+    to_grab = 'mlb'
+    if args.standings:
+        print_standings(args.standings)
+    else:
+        print_scores(args)
 
 ''' for baseball things to care about
  group has the page title which could be used as a header

@@ -121,3 +121,5 @@ if __name__ == '__main__':
             events_to_print.append(process(e, config))
 
         print_events(events_to_print, 2)
+    with open(config_file, 'w+') as file:
+        json.dump(config, file, indent=4, sort_keys=True)

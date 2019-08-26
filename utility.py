@@ -46,7 +46,8 @@ def pop_types(a, types):
 def add_whitespace(string, length, base=""):
     if base == "":
         base = string
-    return string + ((length - len(base)) * " ")
+    returned = string + ((length - len(base)) * " ")
+    return returned
 
 
 def custom_text_color(tup):

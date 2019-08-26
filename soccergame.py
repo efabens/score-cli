@@ -9,11 +9,22 @@ class SoccerGame(Game):
         Game.__init__(self, event)
         self.homeTeam = SoccerTeam(self.c['competitors'][0], config)
         self.awayTeam = SoccerTeam(self.c['competitors'][1], config)
-        self.link = 'espnfc.us/match?gameid=' + event['id']
+        self.link = 'espn.com/soccer/match?gameId=' + event['id']
         if self.hasOdds:
-            self.awayOdds = self.odds[0]['awayTeamOdds']['summary']
-            self.homeOdds = self.odds[0]['homeTeamOdds']['summary']
-            self.drawOdds = self.odds[0]['drawOdds']['summary']
+            away = self.odds[0]['awayTeamOdds']
+            home = self.odds[0]['homeTeamOdds']
+            draw = self.odds[0]['drawOdds']
+            self.awayOdds = self.extractOdds(away)
+            self.homeOdds = self.extractOdds(home)
+            self.drawOdds = self.extractOdds(draw)
+
+    def extractOdds(self, odds: dict):
+        if 'summary' in odds:
+            return odds['summary']
+        elif 'moneyLine' in odds:
+            return odds['moneyLine']
+        else:
+            return ""
 
 
 class SoccerTeam(Team):
@@ -31,6 +42,8 @@ class SoccerTeam(Team):
             self.color = tuple(
                 int(colors['color'][i:i+2], 16) for i in (0, 2, 4))
         elif (color and alt) and color != alt:
+            config["colors"]["soccer"][self.name] = {
+                "alt": alt, "color": color}
             self.alternateColor = tuple(
                 int(color[i:i+2], 16) for i in (0, 2, 4))
             self.color = tuple(int(alt[i:i+2], 16) for i in (0, 2, 4))
@@ -41,7 +54,6 @@ class SoccerTeam(Team):
         return (
             custom_text_color(color) + custom_background(alt) +
             self.name + ENDC)
-
 
     # Potential things to include
 '''
