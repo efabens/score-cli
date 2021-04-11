@@ -3,10 +3,10 @@ from utility import custom_text_color, custom_background, ENDC
 
 
 class BasketballGame(Game):
-    def __init__(self, event):
+    def __init__(self, event, config: dict):
         Game.__init__(self, event)
-        self.homeTeam = BasketballTeam(self.c['competitors'][0])
-        self.awayTeam = BasketballTeam(self.c['competitors'][1])
+        self.homeTeam = BasketballTeam(self.c['competitors'][0], config)
+        self.awayTeam = BasketballTeam(self.c['competitors'][1], config)
         self.link = f'espn.com/nba/game?gameId={event["id"]}'
         if self.hasOdds:
             self.moneyline = self.odds[0].get('details', " ")
@@ -14,10 +14,27 @@ class BasketballGame(Game):
 
 
 class BasketballTeam(Team):
-    def __init__(self, team):
+    def __init__(self, team, config: dict):
         Team.__init__(self, team)
         self.score = team.get('score', None)
         self.winner = team.get('winner', False)
+        color = team['team'].get("color", False)
+        alt = team['team'].get("alternateColor", False)
+        custom = config.get("colors", {}).get("nba", {})
+        if self.name in custom:
+            colors = custom[self.name]
+            self.alternateColor = tuple(
+                int(colors['background'][i:i+2], 16) for i in (0, 2, 4))
+            self.color = tuple(
+                int(colors['text-color'][i:i+2], 16) for i in (0, 2, 4))
+        elif (color and alt) and color != alt:
+            config["colors"]["nba"][self.name] = {
+                "background": alt, "text-color": color}
+            self.alternateColor = tuple(
+                int(color[i:i+2], 16) for i in (0, 2, 4))
+            self.color = tuple(int(alt[i:i+2], 16) for i in (0, 2, 4))
+        else:
+            print(f"No color for {self.name}")
 
     def colorful_name(self):
         color = self.color
@@ -25,17 +42,3 @@ class BasketballTeam(Team):
         return (
             custom_text_color(color) + custom_background(alt) +
             self.name + ENDC)
-
-    def get_colors(self):
-        color1 = Team.get_colors(self)
-        nba_colors = {
-            "POR": {"alt": (224, 58, 62), "color": (6, 25, 34)},
-            "PHI": {"alt": (237, 23, 76), "color": (0, 107, 182)},
-            "TOR": {"alt": (161, 161, 164), "color": (206, 17, 65)},
-            "DEN": {"alt": (255, 198, 39), "color": (13, 34, 64)},
-            "GS": {"alt": (0, 107, 182), "color": (253, 185, 39)},
-            "HOU": {"alt": (206, 17, 65), "color": (6, 25, 34)},
-            "MIL": {"alt": (0, 71, 27), "color": (240, 235, 210)},
-        }
-        color1.update(nba_colors)
-        return color1

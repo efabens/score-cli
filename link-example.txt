@@ -1,0 +1,2 @@
+https://statsapi.mlb.com/api/v1/game/565143/feed/live
+https://statsapi.mlb.com/api/v1/schedule?language=en&sportId=1&date=05/10/2019&sortBy=gameDate&hydrate=game(content(summary,media(epg))),linescore(runners),flags,team,review

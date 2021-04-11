@@ -1,4 +1,5 @@
 import json
+import yaml
 import os
 from datetime import datetime
 from urllib import request
@@ -7,6 +8,8 @@ from argparse import ArgumentParser
 
 from soccergame import SoccerGame
 from utility import add_whitespace, custom_text_color, custom_background, ENDC, print_events
+
+width = 27
 
 
 def process(game_event, config):
@@ -17,12 +20,12 @@ def process(game_event, config):
     game_detail = game1.detail
     mid_line = process_team(game1.homeTeam, game1.state)
     bottom_line = process_team(game1.awayTeam, game1.state)
-    link = add_whitespace(game1.link, 29)
+    link = add_whitespace(game1.link, width + 9)
 
     if game1.state != 'pre':
-        top_line = add_whitespace(game_detail, 20) + "   Score "
+        top_line = add_whitespace(game_detail, width + 0) + "   Score "
     else:
-        top_line = add_whitespace(game1.date, 29)
+        top_line = add_whitespace(game1.date, width + 9)
 
     event_info.append(top_line)
     event_info.append(mid_line)
@@ -32,7 +35,7 @@ def process(game_event, config):
 
 
 def process_team(team, state):
-    t = add_whitespace(team.colorful_name(), 26,
+    t = add_whitespace(team.colorful_name(), width + 6,
                        base=team.name)
 
     if state != 'pre':
@@ -80,11 +83,11 @@ if __name__ == '__main__':
 
     config_file = (
         os.path.realpath(__file__ + "/..") +
-        '/config.json')
+        '/config.yaml')
 
     if os.path.isfile(config_file):
         with open(config_file, 'r+') as file:
-            config = json.load(file)
+            config = yaml.safe_load(file)
     else:
         config = {}
     config_changes = False
@@ -106,7 +109,7 @@ if __name__ == '__main__':
     if config_changes:
         config['soccer_leagues'] = config_leagues
         with open(config_file, 'w+') as file:
-            json.dump(config, file, indent=4, sort_keys=True)
+            yaml.dump(config, file)
 
     to_print = [l for l in skores if config['soccer_leagues']
                 [l['leagues'][0]['midsizeName']]['to_display']]
@@ -120,6 +123,6 @@ if __name__ == '__main__':
         for e in events:
             events_to_print.append(process(e, config))
 
-        print_events(events_to_print, 2)
+        print_events(events_to_print, 3)
     with open(config_file, 'w+') as file:
-        json.dump(config, file, indent=4, sort_keys=True)
+        yaml.dump(config, file)

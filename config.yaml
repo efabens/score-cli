@@ -1,0 +1,1954 @@
+colors:
+  nba:
+    76ers:
+      background: 006bb6
+      text-color: ed174c
+    Bucks:
+      background: f0ebd2
+      text-color: 003813
+    Bulls:
+      background: CE1141
+      text-color: '000000'
+    Cavaliers:
+      background: fdbb30
+      text-color: '061642'
+    Celtics:
+      background: f1f2f3
+      text-color: '006532'
+    Clippers:
+      background: f1f2f3
+      text-color: FA0028
+    Grizzlies:
+      background: 5D76A9
+      text-color: F5B112
+    Guangzhou Long-Lions:
+      background: '000000'
+      text-color: ffffff
+    Hawks:
+      background: e03a3e
+      text-color: '000000'
+    Heat:
+      background: '000000'
+      text-color: ffffff
+    Hornets:
+      background: 008ca8
+      text-color: 1D1060
+    Jazz:
+      background: f9a01b
+      text-color: 06143F
+    Kings:
+      background: 8e9090
+      text-color: '393996'
+    Knicks:
+      background: f58426
+      text-color: 225EA8
+    Lakers:
+      background: '552582'
+      text-color: fdba21
+    Magic:
+      background: c4ced3
+      text-color: 0860A8
+    Mavericks:
+      background: c4ced3
+      text-color: 0C479D
+    Nets:
+      background: ffffff
+      text-color: '000000'
+    New Zealand Breakers:
+      background: '000000'
+      text-color: 00bfff
+    Nuggets:
+      background: fdb927
+      text-color: 0860A8
+    Pacers:
+      background: 002D62
+      text-color: FDBB30
+    Pelicans:
+      background: b4975a
+      text-color: 002a5c
+    Pistons:
+      background: 006bb6
+      text-color: FA002C
+    Raptors:
+      background: 061922
+      text-color: CE0F41
+    Rockets:
+      background: c4ced3
+      text-color: D40026
+    Spurs:
+      background: c4ced4
+      text-color: '000000'
+    Suns:
+      background: 1d1160
+      text-color: e56020
+    Thunder:
+      background: 007ac1
+      text-color: ef3b24
+    Timberwolves:
+      background: c4ced3
+      text-color: 0E3764
+    Trail Blazers:
+      background: E03A3E
+      text-color: '000000'
+    Warriors:
+      background: fdb927
+      text-color: 003da5
+    Wizards:
+      background: e31837
+      text-color: 0E3764
+  soccer:
+    AC Milan:
+      background: ffffff
+      text-color: C8142F
+    AFC Bournemouth:
+      background: 0f204b
+      text-color: C8142F
+    AFC Wimbledon:
+      background: ffff00
+      text-color: 0000d4
+    AS Roma:
+      background: a1a8b0
+      text-color: 9f0000
+    AZ Alkmaar:
+      background: '000000'
+      text-color: CF010E
+    Accrington Stanley:
+      background: 5CBFEB
+      text-color: C8142F
+    Ajax Amsterdam:
+      background: 1a1a1a
+      text-color: DF1B27
+    Alashkert FC:
+      background: C60000
+      text-color: '000000'
+    "Alav\xE9s":
+      background: C8142F
+      text-color: 0000ff
+    Albania:
+      background: ffffff
+      text-color: E70000
+    Algeria:
+      background: '000000'
+      text-color: 5bbd19
+    Alianza FC:
+      background: C60000
+      text-color: '000000'
+    "Am\xE9rica":
+      background: 001C58
+      text-color: ffff91
+    Andorra:
+      background: 0000cd
+      text-color: E70000
+    Angers:
+      background: fafafc
+      text-color: 1a1a1a
+    Angola:
+      background: C60000
+      text-color: BE0027
+    Angola U17:
+      background: C60000
+      text-color: BE0027
+    Apoel Nicosia:
+      background: F7AA25
+      text-color: ffff00
+    Argentina:
+      background: 0a2f41
+      text-color: 9fcfff
+    Armenia:
+      background: ffffff
+      text-color: DE2400
+    Arsenal:
+      background: '060040'
+      text-color: EF0107
+    Arsenal U21:
+      background: ffdf00
+      text-color: EF0107
+    Aston Villa:
+      background: 5CBFEB
+      text-color: 7A003C
+    Aston Villa U21:
+      background: 5CBFEB
+      text-color: 7A003C
+    Atalanta:
+      background: 1a1a1a
+      text-color: 0066FF
+    Athletic Bilbao:
+      background: 3366CC
+      text-color: C8142F
+    Athletico-PR:
+      background: cf081f
+      text-color: '000000'
+    Atlanta United FC:
+      background: ffffff
+      text-color: C60000
+    Atlas:
+      background: e1e1e1
+      text-color: EF0107
+    Atletico Madrid:
+      background: b9e8f0
+      text-color: C8142F
+    "Atl\xE9tico Pantoja":
+      background: C60000
+      text-color: '000000'
+    Austin FC:
+      background: '000000'
+      text-color: 00B140
+    Australia:
+      background: 008751
+      text-color: FCD116
+    Australia U17:
+      background: 0081d6
+      text-color: dabf00
+    Austria:
+      background: ffffff
+      text-color: E70000
+    Azerbaijan:
+      background: ffffff
+      text-color: 2D4AB0
+    BATE Borisov:
+      background: ffff00
+      text-color: 0b419b
+    Barcelona:
+      background: e0ff00
+      text-color: 951D27
+    Bayer Leverkusen:
+      background: 091453
+      text-color: C8142F
+    Bayern Munich:
+      background: cff6e4
+      text-color: C8142F
+    Belarus:
+      background: E70000
+      text-color: ffffff
+    Belgium:
+      background: C60000
+      text-color: '000000'
+    Benevento:
+      background: FFFF00
+      text-color: C60000
+    Benfica:
+      background: a1a8b0
+      text-color: ca281d
+    Bermuda:
+      background: 0033a0
+      text-color: c8102e
+    Besiktas:
+      background: 1a1a1a
+      text-color: '040404'
+    Birmingham City:
+      background: '000000'
+      text-color: 0000fa
+    Blackpool:
+      background: 000099
+      text-color: F5A12D
+    Boca Juniors:
+      background: 0060f0
+      text-color: fcb000
+    Bolivia:
+      background: 007934
+      text-color: f9e300
+    Bologna:
+      background: ebebeb
+      text-color: D91B25
+    Bolton Wanderers:
+      background: 1a1a1a
+      text-color: ffffff
+    Bonaire:
+      background: C60000
+      text-color: '000000'
+    Borac Banja Luka:
+      background: C60000
+      text-color: '000000'
+    Borussia Dortmund:
+      background: 1a1a1a
+      text-color: ffff00
+    Borussia Monchengladbach:
+      background: 89bcff
+      text-color: ffffff
+    Bosnia and Herzegovina:
+      background: ffffff
+      text-color: '112855'
+    Brazil:
+      background: 003cff
+      text-color: ffe400
+    Brazil U17:
+      background: 0081d6
+      text-color: FCD116
+    Brentford:
+      background: 1a1a1a
+      text-color: C8142F
+    Brescia:
+      background: ffffff
+      text-color: 006bb9
+    Brighton & Hove Albion U21:
+      background: 090a06
+      text-color: 0000ff
+    Bristol Rovers:
+      background: '425679'
+      text-color: 000099
+    British Virgin Islands:
+      background: c8102e
+      text-color: 0033a0
+    Bulgaria:
+      background: E70000
+      text-color: 00924a
+    Burnley:
+      background: 231F20
+      text-color: 53162F
+    Burton Albion:
+      background: ffffff
+      text-color: ffff00
+    "CF Montr\xE9al":
+      background: ffffff
+      text-color: 1163b7
+    CFR Cluj-Napoca:
+      background: 1a1a1a
+      text-color: 94283f
+    CS Fola Esch:
+      background: C60000
+      text-color: '000000'
+    Cagliari:
+      background: ffffff
+      text-color: af1a30
+    Cambridge United:
+      background: 82dbf5
+      text-color: FECD32
+    Canada:
+      background: '000000'
+      text-color: FF0000
+    Canada U17:
+      background: C60000
+      text-color: ed174b
+    Canada U23:
+      background: '000000'
+      text-color: FF0000
+    Capoise:
+      background: C60000
+      text-color: '000000'
+    Cardiff City:
+      background: F7AA25
+      text-color: 000099
+    Carlisle United:
+      background: b0ffe1
+      text-color: 0e00f7
+    Celta Vigo:
+      background: 61031b
+      text-color: b9e8f0
+    Celtic:
+      background: 1e5536
+      text-color: 089455
+    "Cerro Porte\xF1o":
+      background: '000000'
+      text-color: EF2D24
+    Charlton Athletic:
+      background: '020202'
+      text-color: C8142F
+    Chelsea:
+      background: ffde00
+      text-color: 0000dd
+    Chelsea U21:
+      background: D00027
+      text-color: 0000dd
+    Cheltenham Town:
+      background: 82dbf5
+      text-color: C8142F
+    Chicago Fire:
+      background: acc0cb
+      text-color: C60000
+    Chicago Fire FC:
+      background: ffffff
+      text-color: C60000
+    Chicago Red Stars:
+      background: '000000'
+      text-color: C60000
+    Chile:
+      background: 0000be
+      text-color: C60000
+    Club Brugge:
+      background: cc272e
+      text-color: 0071ee
+    Club Sportif Sfaxien:
+      background: CC0000
+      text-color: '000000'
+    Colchester United:
+      background: 1a1a1a
+      text-color: 0e00f7
+    Colombia:
+      background: 0c2fff
+      text-color: ffff00
+    Colorado Rapids:
+      background: DAA520
+      text-color: 91022D
+    Columbus Crew:
+      background: 231F20
+      text-color: ffff00
+    Columbus Crew SC:
+      background: 231F20
+      text-color: ffff00
+    Connah's Quay:
+      background: '000000'
+      text-color: CB4335
+    Costa Rica:
+      background: '000000'
+      text-color: EF0000
+    Coventry City:
+      background: ffde00
+      text-color: 82dbf5
+    Crawley Town:
+      background: ffffff
+      text-color: C8142F
+    Crewe Alexandra:
+      background: FECD32
+      text-color: C8142F
+    Croatia:
+      background: '292929'
+      text-color: DE2400
+    Crotone:
+      background: '333755'
+      text-color: 275ba2
+    Cruz Azul:
+      background: ffffff
+      text-color: 0000ff
+    Crystal Palace:
+      background: f42727
+      text-color: 0202fb
+    Cuba:
+      background: c8102e
+      text-color: 0033a0
+    Curacao:
+      background: '000000'
+      text-color: 0537e4
+    Czech Republic:
+      background: ffffff
+      text-color: E70000
+    "C\xE1diz":
+      background: 000099
+      text-color: ffff00
+    DC United:
+      background: ffffff
+      text-color: '000000'
+    Denmark:
+      background: ffffff
+      text-color: ea2300
+    Derby County:
+      background: 0078ff
+      text-color: '020202'
+    Dinamo Zagreb:
+      background: f0e78c
+      text-color: 000099
+    Dominica:
+      background: C60000
+      text-color: 32ad42
+    Dominican Republic:
+      background: CE1126
+      text-color: 002D62
+    Doncaster Rovers:
+      background: 000099
+      text-color: C8142F
+    Dulwich Hamlet:
+      background: ffffff
+      text-color: d9abd4
+    Dynamo Kiev:
+      background: 1a1a1a
+      text-color: ffffff
+    Eastleigh:
+      background: e1e1e1
+      text-color: 0000FF
+    Ecuador:
+      background: ed1c24
+      text-color: ffdd00
+    Ecuador U17:
+      background: dfc60a
+      text-color: 002686
+    Ecuador U20:
+      background: ed1c24
+      text-color: ffdd00
+    Eibar:
+      background: 288A00
+      text-color: c00000
+    Eintracht Frankfurt:
+      background: ffffff
+      text-color: 1a1a1a
+    El Salvador:
+      background: '000000'
+      text-color: 0537e4
+    El Salvador U23:
+      background: '000000'
+      text-color: 0537e4
+    Elche:
+      background: 1b1b25
+      text-color: 288A00
+    Emelec:
+      background: '000000'
+      text-color: 0505d2
+    Energie Cottbus:
+      background: ffff00
+      text-color: cc0000
+    England:
+      background: cf081f
+      text-color: ffffff
+    Espanyol:
+      background: 1a1a1a
+      text-color: 3366CC
+    Eswatini:
+      background: E70000
+      text-color: '000000'
+    Etoile Sahel:
+      background: FF0000
+      text-color: FFFFFF
+    Everton:
+      background: ffde00
+      text-color: 0000ff
+    Everton U21:
+      background: ff6464
+      text-color: 0000ff
+    Exeter City:
+      background: ffff00
+      text-color: C8142F
+    FC Augsburg:
+      background: ce1b0e
+      text-color: ffffff
+    FC Basel:
+      background: C8142F
+      text-color: '352095'
+    FC Cincinnati:
+      background: ffffff
+      text-color: 003087
+    FC Cologne:
+      background: DA0308
+      text-color: ffffff
+    FC Copenhagen:
+      background: '375197'
+      text-color: ffffff
+    FC Dallas:
+      background: 0051BA
+      text-color: CF0032
+    FC Midtjylland:
+      background: ff0900
+      text-color: '000000'
+    FC Porto:
+      background: a1a8b0
+      text-color: 005099
+    FC Salzburg:
+      background: '000000'
+      text-color: d82c3a
+    FC Union Berlin:
+      background: ffffff
+      text-color: C60000
+    FK Qarabag:
+      background: 0000FF
+      text-color: ffffff`
+    FK Suduva:
+      background: '000000'
+      text-color: FF0000
+    Faroe Islands:
+      background: 195ccd
+      text-color: ffffff
+    Fenerbahce:
+      background: 000099
+      text-color: ffff00
+    Ferencvaros:
+      background: ffffff
+      text-color: 239B56
+    Finland:
+      background: 0537e4
+      text-color: ffffff
+    Fiorentina:
+      background: ffffff
+      text-color: 792DCD
+    Flamengo:
+      background: '000000'
+      text-color: C60000
+    Fleetwood Town:
+      background: ffff00
+      text-color: C8142F
+    Flora:
+      background: C60000
+      text-color: '000000'
+    Forest Green Rovers:
+      background: 1a1a1a
+      text-color: aeff2b
+    Forge FC:
+      background: C60000
+      text-color: '000000'
+    "Fortuna D\xFCsseldorf":
+      background: 1a1a1a
+      text-color: ffffff
+    France:
+      background: ffffff
+      text-color: '112855'
+    French Guiana:
+      background: 0033a0
+      text-color: D20300
+    Fulham:
+      background: C8142F
+      text-color: ffffff
+    Fulham U21:
+      background: C8142F
+      text-color: 090808
+    Galatasaray:
+      background: e2cfaa
+      text-color: af3331
+    Genoa:
+      background: ffffff
+      text-color: bb0000
+    Georgia:
+      background: DE2918
+      text-color: ffffff
+    Germany:
+      background: 008b9f
+      text-color: ffffff
+    Getafe:
+      background: fe4b00
+      text-color: 3366CC
+    Ghana:
+      background: ea2300
+      text-color: dabf00
+    Gibraltar:
+      background: ffffff
+      text-color: DE2918
+    Gillingham:
+      background: C60000
+      text-color: 000099
+    Go Ahead Eagles:
+      background: C60000
+      text-color: FCEE33
+    Granada:
+      background: 1a1a1a
+      text-color: C8142F
+    Greece:
+      background: 0537e4
+      text-color: ffffff
+    Grimsby Town:
+      background: 0e00f7
+      text-color: 1a1a1a
+    "Gr\xEAmio":
+      background: '000000'
+      text-color: 0093EC
+    Guatemala:
+      background: FFFFFF
+      text-color: 418fde
+    Guyana:
+      background: ce1126
+      text-color: fcd116
+    HB Torshavn:
+      background: C60000
+      text-color: '000000'
+    Haiti:
+      background: D20300
+      text-color: 0033a0
+    Haiti U23:
+      background: 00924a
+      text-color: ea2300
+    Harrogate Town:
+      background: aeeaff
+      text-color: ffff00
+    Hartlepool United:
+      background: 1a1a1a
+      text-color: 0000FF
+    Hellas Verona:
+      background: ffff00
+      text-color: 2234a4
+    Hertha Berlin:
+      background: 00b0c2
+      text-color: 0000dd
+    Hibernians:
+      background: FFFFFF
+      text-color: FDF900
+    Highlands Park:
+      background: '000000'
+      text-color: C60000
+    Honduras:
+      background: ffffff
+      text-color: 333ebd
+    Honduras U23:
+      background: '000000'
+      text-color: 333ebd
+    Houston Dash:
+      background: a7c0dd
+      text-color: F36600
+    Houston Dynamo:
+      background: '000000'
+      text-color: F36600
+    Houston Dynamo FC:
+      background: '000000'
+      text-color: F36600
+    Huddersfield Town:
+      background: 040294
+      text-color: 0271B9
+    Huesca:
+      background: C60000
+      text-color: 000099
+    Hungary:
+      background: ffffff
+      text-color: E70000
+    Hungary U17:
+      background: C60000
+      text-color: '006600'
+    Iceland:
+      background: ffffff
+      text-color: 0c2fff
+    India:
+      background: ff781f
+      text-color: 000080
+    Inter D'Escaldes:
+      background: C60000
+      text-color: '000000'
+    Inter Miami CF:
+      background: 231F20
+      text-color: F5B6CD
+    Internacional:
+      background: '000000'
+      text-color: C60000
+    Internazionale:
+      background: d9dce8
+      text-color: 000099
+    Ipswich Town:
+      background: '890000'
+      text-color: 0000fa
+    Israel:
+      background: 5CBFEB
+      text-color: ffffff
+    Istanbul Basaksehir:
+      background: F7AA25
+      text-color: fc6500
+    Istanbul Buyuksehir BSK:
+      background: F7AA25
+      text-color: fc6500
+    Italy:
+      background: 093cd8
+      text-color: ffffff
+    Italy U20:
+      background: 093cd8
+      text-color: ffffff
+    JS Kabylie:
+      background: C60000
+      text-color: '000000'
+    Jamaica:
+      background: '000000'
+      text-color: ffe000
+    Japan:
+      background: dddddd
+      text-color: 000080
+    Jaraaf:
+      background: C60000
+      text-color: '000000'
+    Juventus:
+      background: ebebeb
+      text-color: 181A21
+    KAA Gent:
+      background: f2ff00
+      text-color: 000099
+    "KF Shk\xEBndija":
+      background: '000000'
+      text-color: E91514
+    KI Klaksvik:
+      background: c60000
+      text-color: '000000'
+    KS Teuta:
+      background: C60000
+      text-color: '000000'
+    Kansas City:
+      background: CD343C
+      text-color: 67C4C7
+    Kazakhstan:
+      background: 00bfff
+      text-color: ffec00
+    Kosovo:
+      background: ffec00
+      text-color: 0000cd
+    Krasnodar:
+      background: C60000
+      text-color: 025719
+    LA Galaxy:
+      background: 00245D
+      text-color: EEB111
+    LAFC:
+      background: ffffff
+      text-color: '000000'
+    LASK Linz:
+      background: C60000
+      text-color: '000000'
+    Latvia:
+      background: ffffff
+      text-color: '992242'
+    Lazio:
+      background: 4efd54
+      text-color: 5699eb
+    Lecce:
+      background: C60000
+      text-color: FFDB23
+    Leeds United:
+      background: '696969'
+      text-color: ffffff
+    Leganes:
+      background: 6bff00
+      text-color: 0043ff
+    Leicester City:
+      background: 6c8294
+      text-color: 0202fb
+    Leicester City U21:
+      background: feb1d0
+      text-color: 0202fb
+    Levante:
+      background: '000000'
+      text-color: C8142F
+    Leyton Orient:
+      background: 0e00f7
+      text-color: C8142F
+    "Le\xF3n":
+      background: FFF61B
+      text-color: 008000
+    Libertad:
+      background: '000000'
+      text-color: ffffff
+    Liechtenstein:
+      background: E70000
+      text-color: 0000cd
+    Lille:
+      background: ffe566
+      text-color: ef2f24
+    Lincoln City:
+      background: c6d4db
+      text-color: C8142F
+    Lincoln Red Imps:
+      background: C60000
+      text-color: '000000'
+    Lithuania:
+      background: DE2918
+      text-color: ffe400
+    Liverpool:
+      background: 6500cb
+      text-color: D00027
+    Liverpool U21:
+      background: 0f204b
+      text-color: D00027
+    Lokomotiv Moscow:
+      background: ffffff
+      text-color: 03501b
+    Ludogorets Razgrad:
+      background: e1e1e1
+      text-color: 008000
+    Luton Town:
+      background: C60000
+      text-color: 1a1a1a
+    Luxembourg:
+      background: ffffff
+      text-color: E70000
+    Lyon:
+      background: 011F68
+      text-color: ef2f24
+    MLS All-Stars:
+      background: C60000
+      text-color: '000000'
+    Maccabi Haifa:
+      background: '000000'
+      text-color: 34a66d
+    Maccabi Tel-Aviv:
+      background: ffff00
+      text-color: 32489e
+    Mainz:
+      background: ffffff
+      text-color: DA0308
+    Mallorca:
+      background: ffffff
+      text-color: C8142F
+    Malmo FF:
+      background: 052a87
+      text-color: 5699eb
+    Malta:
+      background: ffffff
+      text-color: DE2400
+    Manchester City:
+      background: 0f204b
+      text-color: 5CBFEB
+    Manchester City U21:
+      background: 0f204b
+      text-color: 5CBFEB
+    Manchester United:
+      background: f9e8a5
+      text-color: DA020E
+    Manchester United U21:
+      background: f9e8a5
+      text-color: DA020E
+    Mansfield Town:
+      background: 1a1a1a
+      text-color: FECD32
+    Martinique:
+      background: '000000'
+      text-color: 0537e4
+    Mexico:
+      background: 006847
+      text-color: ce1126
+    Middlesbrough:
+      background: '020202'
+      text-color: C8142F
+    Millwall:
+      background: ffff00
+      text-color: 091453
+    Milton Keynes Dons:
+      background: ff4f00
+      text-color: ffffff
+    Minnesota United FC:
+      background: aae2f7
+      text-color: '575957'
+    Moldova:
+      background: FCD116
+      text-color: 0c2fff
+    Montenegro:
+      background: ffffff
+      text-color: E70000
+    Monterrey:
+      background: ffffff
+      text-color: 001C58
+    Montreal Impact:
+      background: 2b63ad
+      text-color: bbc3c6
+    Morecambe:
+      background: ffff00
+      text-color: C8142F
+    Morocco:
+      background: '117957'
+      text-color: d50414
+    NAPSA Stars:
+      background: C60000
+      text-color: '000000'
+    NJ/NY Gotham FC:
+      background: 0ceefa
+      text-color: '000000'
+    NK Maribor:
+      background: ffff00
+      text-color: '391669'
+    NS Mura:
+      background: C60000
+      text-color: '000000'
+    Nacional:
+      background: C60000
+      text-color: 345BBC
+    Namungo:
+      background: C60000
+      text-color: '000000'
+    Napoli:
+      background: 253b11
+      text-color: 0677d2
+    Nashville SC:
+      background: 022e7a
+      text-color: efdc17
+    Netherlands:
+      background: 0081d6
+      text-color: d48c00
+    New England Revolution:
+      background: d0e9f0
+      text-color: '022166'
+    New York City FC:
+      background: '575957'
+      text-color: 6CADDF
+    New York Red Bulls:
+      background: D50031
+      text-color: c9c7c8
+    New Zealand U17:
+      background: EF0107
+      text-color: '000000'
+    Newcastle United:
+      background: 2c5149
+      text-color: 231F20
+    Newcastle United U21:
+      background: 2c5149
+      text-color: '000000'
+    Newport County:
+      background: cdcdcd
+      text-color: FECD32
+    Nicaragua:
+      background: '000000'
+      text-color: 333ebd
+    Nigeria:
+      background: 1a4030
+      text-color: 37ff5d
+    Nigeria U17:
+      background: '000000'
+      text-color: 5bbd19
+    Nkana:
+      background: FFFFFF
+      text-color: FF0000
+    North Carolina Courage:
+      background: fafafc
+      text-color: 142A73
+    North Macedonia:
+      background: ffffff
+      text-color: E70000
+    Northampton Town:
+      background: 1a1a1a
+      text-color: 8E003B
+    Northern Ireland:
+      background: 5CBFEB
+      text-color: 32ad42
+    Norway:
+      background: ffffff
+      text-color: ee3b33
+    Norwich City:
+      background: f42727
+      text-color: '005327'
+    Norwich City U21:
+      background: f42727
+      text-color: '005327'
+    Nottingham Forest:
+      background: 091453
+      text-color: C8142F
+    OL Reign:
+      background: ffffff
+      text-color: 0000bf
+    Oldham Athletic:
+      background: F7AA25
+      text-color: 0e00f7
+    Olympiakos:
+      background: 1a1a1a
+      text-color: d01729
+    Orlando City SC:
+      background: fcf814
+      text-color: '633492'
+    Orlando Pirates:
+      background: C60000
+      text-color: '000000'
+    Orlando Pride:
+      background: a7c0dd
+      text-color: '633492'
+    Osasuna:
+      background: 00cfd2
+      text-color: cd0000
+    Oxford United:
+      background: ffffff
+      text-color: ffff00
+    Panama:
+      background: 0537e4
+      text-color: D20300
+    Paraguay:
+      background: 0c2fff
+      text-color: ea2300
+    Paris Saint-Germain:
+      background: ef2f24
+      text-color: 00003e
+    Parma:
+      background: ffdd30
+      text-color: ffffff
+    Peru:
+      background: ffffff
+      text-color: ea2300
+    Perugia:
+      background: FFFFFF
+      text-color: FF0000
+    Peterborough United:
+      background: 1a1a1a
+      text-color: 0000fa
+    Philadelphia Union:
+      background: ffffff
+      text-color: '022166'
+    Plymouth Argyle:
+      background: 9eefe1
+      text-color: 003e00
+    Poland:
+      background: C60000
+      text-color: '000000'
+    Polokwane City:
+      background: 00ffff
+      text-color: ff7f00
+    Port Vale:
+      background: FECD32
+      text-color: ffffff
+    Portland Thorns FC:
+      background: 004812
+      text-color: C60000
+    Portland Timbers:
+      background: dff424
+      text-color: 004812
+    Portmore Utd:
+      background: C60000
+      text-color: '000000'
+    Portsmouth:
+      background: c6d4db
+      text-color: 0000fa
+    Portugal:
+      background: C60000
+      text-color: '000000'
+    Preston North End:
+      background: '000000'
+      text-color: ffffff
+    Prishtina:
+      background: C60000
+      text-color: '000000'
+    Puerto Rico:
+      background: C60000
+      text-color: '000000'
+    Pyramids FC:
+      background: C60000
+      text-color: '000000'
+    Qatar:
+      background: '000000'
+      text-color: 691a40
+    Queens Park Rangers:
+      background: 80ffd5
+      text-color: 0000d4
+    RB Leipzig:
+      background: 091453
+      text-color: ffffff
+    RSB Berkane:
+      background: C60000
+      text-color: FFFFFF
+    Racing Genk:
+      background: fafafc
+      text-color: 0000ff
+    Racing Louisville FC:
+      background: 14002F
+      text-color: C3B5FF
+    Raja Casablanca:
+      background: FFFFFF
+      text-color: 00CC00
+    Rapid Vienna:
+      background: dc1f26
+      text-color: 2b6a36
+    Reading:
+      background: '000000'
+      text-color: ffffff
+    Real Betis:
+      background: '000000'
+      text-color: 288A00
+    "Real Estel\xED":
+      background: C60000
+      text-color: '000000'
+    Real Madrid:
+      background: C8142F
+      text-color: 1a1a1a
+    Real Salt Lake:
+      background: eae1df
+      text-color: C60000
+    Real Sbackground Lake:
+      background: '022166'
+      text-color: C60000
+    Real Sociedad:
+      background: dab32a
+      text-color: 3366CC
+    Real Valladolid:
+      background: 7a2d9d
+      text-color: ffffff
+    Red Star Belgrade:
+      background: 000099
+      text-color: FF0000
+    Reign FC:
+      background: 0c194f
+      text-color: 1b36a3
+    Republic of Ireland:
+      background: ffffff
+      text-color: 32ad42
+    Riga FC:
+      background: '000000'
+      text-color: 00aae4
+    Robinhood:
+      background: C60000
+      text-color: '000000'
+    Rochdale:
+      background: c6d4db
+      text-color: '101087'
+    Romania:
+      background: D12F2A
+      text-color: ffec00
+    Rotherham United:
+      background: ffffff
+      text-color: C8142F
+    Russia:
+      background: 0537e4
+      text-color: ff0000
+    SC Freiburg:
+      background: 1a1a1a
+      text-color: C8142F
+    SPAL:
+      background: ddac39
+      text-color: 0a79cc
+    SS Folgore Falciano:
+      background: C60000
+      text-color: '000000'
+    Salford City:
+      background: ffffff
+      text-color: C8142F
+    Salitas:
+      background: 009966
+      text-color: FF9900
+    Sampdoria:
+      background: bb0000
+      text-color: 2234a4
+    San Francisco:
+      background: C60000
+      text-color: '000000'
+    San Jose Earthquakes:
+      background: ffffff
+      text-color: '000000'
+    San Lorenzo:
+      background: C60000
+      text-color: 0060f0
+    San Marino:
+      background: ffffff
+      text-color: 00bfff
+    Sao Tome e Principe:
+      background: C60000
+      text-color: '000000'
+    Sassuolo:
+      background: 288A00
+      text-color: 1a1a1a
+    Schalke 04:
+      background: ffffff
+      text-color: 0000dd
+    Scotland:
+      background: ffec00
+      text-color: 1a2d69
+    Seattle Sounders FC:
+      background: 8dc2e8
+      text-color: 628b18
+    Senegal:
+      background: '000000'
+      text-color: 00843d
+    Serbia:
+      background: ffffff
+      text-color: ea2300
+    Sevilla FC:
+      background: c9282d
+      text-color: ffffff
+    Shakhtar Donetsk:
+      background: cdc8b1
+      text-color: ff5900
+    Sheffield United:
+      background: e1e1e1
+      text-color: f42727
+    Shrewsbury Town:
+      background: 29088a
+      text-color: 0000fa
+    Sint Maarten:
+      background: C60000
+      text-color: '000000'
+    Sky Blue FC:
+      background: F36600
+      text-color: 142A73
+    Slavia Prague:
+      background: fcfcfc
+      text-color: dc1f26
+    Slovakia:
+      background: 052a87
+      text-color: ffffff
+    'Slovakia ':
+      background: 052a87
+      text-color: ffffff
+    Slovan Bratislava:
+      background: 000099
+      text-color: ffffff
+    South Africa:
+      background: ffb612
+      text-color: 007a4d
+    South Florida:
+      background: CFC493
+      text-color: '006747'
+    South Sudan:
+      background: 1146b0
+      text-color: da131a
+    Southampton:
+      background: '323232'
+      text-color: ED1A3B
+    Southampton U21:
+      background: '323232'
+      text-color: ED1A3B
+    Southend United:
+      background: ffde00
+      text-color: 000099
+    Spain:
+      background: ffffff
+      text-color: ea2300
+    Sparta Prague:
+      background: ffffff
+      text-color: 791b29
+    Spezia:
+      background: ffffff
+      text-color: 1a1a1a
+    Sporting CP:
+      background: '006666'
+      text-color: 176d44
+    Sporting Kansas City:
+      background: 0A2141
+      text-color: a7c0dd
+    St. Martin:
+      background: '000000'
+      text-color: 0033a0
+    St. Vincent and the Grenadines:
+      background: C60000
+      text-color: 32ad42
+    Standard Liege:
+      background: cccccc
+      text-color: cc272e
+    Stevenage:
+      background: 091453
+      text-color: ffffff
+    Stoke City:
+      background: 1a1a1a
+      text-color: E03A3E
+    Sunderland:
+      background: 0000fa
+      text-color: EB172B
+    Sutton United:
+      background: ffffff
+      text-color: ffd700
+    Swansea City:
+      background: 00b3b9
+      text-color: ffffff
+    Sweden:
+      background: 0537e4
+      text-color: ffec00
+    Swindon Town:
+      background: cdcdcd
+      text-color: C8142F
+    Switzerland:
+      background: ffffff
+      text-color: ea2300
+    TSG Hoffenheim:
+      background: 65f8b0
+      text-color: 003399
+    The New Saints:
+      background: C60000
+      text-color: 239B56
+    Togo:
+      background: C60000
+      text-color: '179354'
+    Torino:
+      background: ffffff
+      text-color: 9f0000
+    Toronto FC:
+      background: ffffff
+      text-color: D80016
+    Tottenham Hotspur:
+      background: '132257'
+      text-color: ffffff
+    Tottenham Hotspur U21:
+      background: 052a87
+      text-color: 0f204b
+    Tranmere Rovers:
+      background: 4c00b3
+      text-color: ffffff
+    Trinidad and Tobago:
+      background: '000000'
+      text-color: c8102e
+    Turkey:
+      background: ffffff
+      text-color: E70000
+    U.A.N.L:
+      background: 0000ff
+      text-color: ffd011
+    Udinese:
+      background: ddac39
+      text-color: 19161D
+    Ukraine:
+      background: 0537e4
+      text-color: ffec00
+    United States:
+      background: C60000
+      text-color: 3C3B6E
+    Uruguay:
+      background: C60000
+      text-color: '000000'
+    Utah Royals FC:
+      background: '022166'
+      text-color: A50531
+    Uzbekistan:
+      background: C60000
+      text-color: '000000'
+    Valencia:
+      background: ffdf1c
+      text-color: aa2d2a
+    Vancouver Whitecaps:
+      background: 001B2D
+      text-color: ffffff
+    Venezuela:
+      background: ffffff
+      text-color: '880007'
+    VfB Stuttgart:
+      background: 1a1a1a
+      text-color: DA0308
+    VfL Wolfsburg:
+      background: 89bcff
+      text-color: 0c4011
+    Viktoria Plzen:
+      background: C60000
+      text-color: 0093EC
+    Villarreal:
+      background: 00554a
+      text-color: ffff00
+    Wales:
+      background: ffec00
+      text-color: E70000
+    Walsall:
+      background: 091453
+      text-color: C8142F
+    Washington Spirit:
+      background: fafafc
+      text-color: C60000
+    Watford:
+      background: 6b78b2
+      text-color: FFF61B
+    Werder Bremen:
+      background: 9bf9ca
+      text-color: 03915c
+    West Bromwich Albion:
+      background: ffde00
+      text-color: 091453
+    West Ham U21:
+      background: 5CBFEB
+      text-color: 60223B
+    West Ham United:
+      background: '264474'
+      text-color: 60223B
+    Winner Playoff Path D:
+      background: C60000
+      text-color: '000000'
+    Wolverhampton Wanderers:
+      background: 1a1a1a
+      text-color: F7AA25
+    Wolverhampton Wanderers U21:
+      background: 1a1a1a
+      text-color: F7AA25
+    Wycombe Wanderers:
+      background: ffff00
+      text-color: a2e0fc
+    Young Boys:
+      background: '000000'
+      text-color: eae04b
+    Zenit St Petersburg:
+      background: ffffff
+      text-color: 449ffa
+    Zimbabwe:
+      background: 1D8348
+      text-color: FFFF00
+emoji:
+  soccer:
+    Australia: "\U0001F1E6\U0001F1FA"
+soccer_leagues:
+  AFC.CHAMPIONS:
+    name: AFC Champions League
+    to_display: false
+  AFC.CUPQ:
+    name: AFC Asian Cup Qualifiers
+    to_display: false
+  AFC.SAFF.CHAMPIONSHIP:
+    name: SAFF Championship
+    to_display: false
+  AFF.CHAMPIONSHIP:
+    name: AFF Cup
+    to_display: false
+  ARG.1:
+    name: Argentine Superliga
+    to_display: false
+  ARG.2:
+    name: Argentine Nacional B
+    to_display: false
+  ARG.3:
+    name: Argentine Primera B
+    to_display: false
+  ARG.4:
+    name: Argentine Primera C
+    to_display: false
+  ARG.5:
+    name: Argentine Primera D
+    to_display: false
+  ARG.COPA:
+    name: Copa Argentina
+    to_display: false
+  AUS.1:
+    name: Australian A-League
+    to_display: false
+  AUS.W.1:
+    name: Australian W-League
+    to_display: false
+  AUT.1:
+    name: Austrian Bundesliga
+    to_display: false
+  BEL.1:
+    name: Belgian First Division A
+    to_display: false
+  BOL.1:
+    name: Bolivian Liga Profesional
+    to_display: false
+  BRA.1:
+    name: Brazilian Serie A
+    to_display: false
+  BRA.2:
+    name: Brazilian Serie B
+    to_display: false
+  BRA.3:
+    name: Brazilian Serie C
+    to_display: false
+  BRA.CAMP.CARIOCA:
+    name: Brazilian Campeonato Carioca
+    to_display: false
+  BRA.CAMP.GAUCHO:
+    name: Brazilian Campeonato Gaucho
+    to_display: false
+  BRA.CAMP.MINEIRO:
+    name: Brazilian Campeonato Mineiro
+    to_display: false
+  BRA.CAMP.PAULISTA:
+    name: Brazilian Campeonato Paulista
+    to_display: false
+  BRA.COPA_DO_BRAZIL:
+    name: Copa Do Brazil
+    to_display: false
+  BRA.COPA_DO_NORDESTE:
+    name: Copa Do Nordeste
+    to_display: false
+  CAF.CHAMPIONS:
+    name: CAF Champions League
+    to_display: false
+  CAF.CONFED:
+    name: CAF Confederations Cup
+    to_display: false
+  CAF.COSAFA:
+    name: COSAFA Cup
+    to_display: false
+  CAF.NATIONS:
+    name: Africa Cup of Nations
+    to_display: false
+  CAF.NATIONS_QUAL:
+    name: Africa Cup of Nations qualifying
+    to_display: false
+  CAMPEONES.CUP:
+    name: Campeones Cup
+    to_display: false
+  CHI.1:
+    name: Chilean Primera Division
+    to_display: false
+  CHI.COPA_CHI:
+    name: Copa Chile
+    to_display: false
+  CHN.1:
+    name: Chinese Super League
+    to_display: false
+  CLUB.FRIENDLY:
+    name: Club Friendly
+    to_display: false
+  COL.1:
+    name: Colombian Primera A
+    to_display: false
+  COL.2:
+    name: Colombian Primera B
+    to_display: false
+  COL.COPA:
+    name: Copa Colombia
+    to_display: false
+  CONCACAF.CHAMPIONS:
+    name: CONCACAF Champions League
+    to_display: true
+  CONCACAF.GOLD:
+    name: CONCACAF Gold Cup
+    to_display: true
+  CONCACAF.GOLD_QUAL:
+    name: CONCACAF Gold Cup Qualifying
+    to_display: true
+  CONCACAF.LEAGUE:
+    name: CONCACAF League
+    to_display: false
+  CONCACAF.LEAGUES.CUP:
+    name: Leagues Cup
+    to_display: true
+  CONCACAF.NATIONS.LEAGUE:
+    name: CONCACAF Nations League
+    to_display: true
+  CONMEBOL.AMERICA:
+    name: Copa America
+    to_display: true
+  CONMEBOL.LIBERTADORES:
+    name: CONMEBOL Copa Libertadores
+    to_display: false
+  CONMEBOL.RECOPA:
+    name: CONMEBOL Recopa Sudamericana
+    to_display: false
+  CONMEBOL.SUDAMERICANA:
+    name: CONMEBOL Copa Sudamericana
+    to_display: false
+  CRC.1:
+    name: Costa Rican Primera Division
+    to_display: false
+  DEN.1:
+    name: Danish SAS-Ligaen
+    to_display: false
+  ECU.1:
+    name: Ecuadoran Primera A
+    to_display: false
+  ECU.SUPERCOPA:
+    name: Ecuadoran Supercopa
+    to_display: false
+  ENG.1:
+    name: English Premier League
+    to_display: true
+  ENG.2:
+    name: English League Championship
+    to_display: false
+  ENG.3:
+    name: English League One
+    to_display: false
+  ENG.4:
+    name: English League Two
+    to_display: false
+  ENG.5:
+    name: English National League
+    to_display: false
+  ENG.CHARITY:
+    name: English FA Community Shield
+    to_display: true
+  ENG.FA:
+    name: English FA Cup
+    to_display: true
+  ENG.LEAGUE_CUP:
+    name: English Carabao Cup
+    to_display: true
+  ENG.TROPHY:
+    name: English EFL Trophy
+    to_display: true
+  ENG.W.1:
+    name: FA Women's Super League
+    to_display: false
+  ESP.1:
+    name: "Spanish Primera Divisi\xF3n"
+    to_display: true
+  ESP.2:
+    name: "Spanish Segunda Divisi\xF3n"
+    to_display: false
+  ESP.COPA_DEL_REY:
+    name: Spanish Copa del Rey
+    to_display: false
+  ESP.COPA_DE_LA_REINA:
+    name: Spanish Copa de la Reina
+    to_display: false
+  FIFA.CONCACAF.OLYMPICSQ:
+    name: CONCACAF Men's Olympic Qualifying
+    to_display: true
+  FIFA.CONMEBOL.OLYMPICSQ:
+    name: CONMEBOL Pre-Olympic Tournament
+    to_display: false
+  FIFA.FRIENDLY:
+    name: International Friendly
+    to_display: false
+  FIFA.FRIENDLY.W:
+    name: Women's International Friendly
+    to_display: true
+  FIFA.SHEBELIEVES:
+    name: SheBelieves Cup
+    to_display: true
+  FIFA.W.OLYMPICSQ:
+    name: Women's Olympic Qualifying Tournament
+    to_display: false
+  FIFA.WORLD:
+    name: FIFA World Cup
+    to_display: true
+  FIFA.WORLD.U17:
+    name: FIFA Under-17 World Cup
+    to_display: false
+  FIFA.WORLD.U20:
+    name: FIFA Under-20 World Cup
+    to_display: true
+  FIFA.WORLDQ.AFC:
+    name: FIFA World Cup Qualifying - AFC
+    to_display: false
+  FIFA.WORLDQ.CAF:
+    name: FIFA World Cup Qualifying - CAF
+    to_display: true
+  FIFA.WORLDQ.CONCACAF:
+    name: FIFA World Cup Qualifying - CONCACAF
+    to_display: true
+  FIFA.WORLDQ.CONMEBOL:
+    name: FIFA World Cup Qualifying - CONMEBOL
+    to_display: true
+  FIFA.WORLDQ.UEFA:
+    name: FIFA World Cup Qualifying - UEFA
+    to_display: true
+  FIFA.WWC:
+    name: FIFA Women's World Cup
+    to_display: true
+  FRA.1:
+    name: French Ligue 1
+    to_display: false
+  FRA.2:
+    name: French Ligue 2
+    to_display: false
+  FRA.COUPE_DE_FRANCE:
+    name: French Coupe de France
+    to_display: false
+  FRA.COUPE_DE_LA_LIGUE:
+    name: French Coupe de la Ligue
+    to_display: false
+  FRIENDLY:
+    name: Friendly
+    to_display: true
+  GER.1:
+    name: German Bundesliga
+    to_display: true
+  GER.2:
+    name: German 2. Bundesliga
+    to_display: false
+  GER.AUDI_CUP:
+    name: Audi Cup
+    to_display: true
+  GER.DFB_POKAL:
+    name: German DFB Pokal
+    to_display: false
+  GER.PLAYOFF.RELEGATION:
+    name: German Bundesliga Promotion/Relegation Playoff
+    to_display: true
+  GER.SUPER_CUP:
+    name: German Super Cup
+    to_display: true
+  GHA.1:
+    name: Ghanaian Premier League
+    to_display: false
+  GLOBAL.CHAMPS_CUP:
+    name: International Champions Cup
+    to_display: true
+  GLOBAL.TOULON:
+    name: Toulon Tournament
+    to_display: false
+  GRE.1:
+    name: Greek Super League
+    to_display: false
+  GRE.1.PROMOTION.RELEGATION:
+    name: Greek Super League Promotion/Relegation Playoffs
+    to_display: false
+  GUA.1:
+    name: Liga Nacional de Guatemala
+    to_display: false
+  HON.1:
+    name: Honduran Primera Division
+    to_display: false
+  IDN.1:
+    name: Indonesian Super League
+    to_display: false
+  IND.1:
+    name: Indian Super League
+    to_display: false
+  IND.2:
+    name: Indian I-League
+    to_display: false
+  IRL.1:
+    name: Irish Premier Division
+    to_display: false
+  ISR.1:
+    name: Israeli Premier League
+    to_display: false
+  ITA.1:
+    name: Italian Serie A
+    to_display: true
+  ITA.2:
+    name: Italian Serie B
+    to_display: false
+  ITA.COPPA_ITALIA:
+    name: Italian Coppa Italia
+    to_display: false
+  JPN.1:
+    name: Japanese J League
+    to_display: false
+  KEN.1:
+    name: Kenyan Premier League
+    to_display: false
+  MEX.1:
+    name: Mexican Liga BBVA MX
+    to_display: false
+  MEX.2:
+    name: Mexican Ascenso MX
+    to_display: false
+  MEX.COPA_MX:
+    name: Mexican Copa MX
+    to_display: false
+  MLT.1:
+    name: Mbackgroundese Premier League
+    to_display: false
+  MYS.1:
+    name: Malaysian Super League
+    to_display: false
+  NED.1:
+    name: Dutch Eredivisie
+    to_display: false
+  NED.2:
+    name: Dutch Eerste Divisie
+    to_display: false
+  NED.CUP:
+    name: Dutch KNVB Beker
+    to_display: false
+  NED.SUPERCUP:
+    name: Dutch Super Cup (Johann Cruyff Shield)
+    to_display: false
+  NED.W.1:
+    name: Dutch Vrouwen Eredivisie
+    to_display: false
+  NGA.1:
+    name: Nigerian Professional League
+    to_display: false
+  NIR.1:
+    name: Northern Irish Premiership
+    to_display: false
+  NOR.1:
+    name: Norwegian Eliteserien
+    to_display: false
+  PAR.1:
+    name: Paraguayan Primera Division
+    to_display: false
+  PER.1:
+    name: Peruvian Primera Profesional
+    to_display: false
+  POR.1:
+    name: Portuguese Liga
+    to_display: false
+  ROU.1:
+    name: Romanian First Division
+    to_display: false
+  ROU.1.PROMOTION.RELEGATION:
+    name: Romanian Liga 1 Promotion/Relegation Playoffs
+    to_display: false
+  RSA.1:
+    name: South African Premiership
+    to_display: false
+  RSA.1.PROMOTION.RELEGATION:
+    name: South African Premiership Promotion/Relegation Playoffs
+    to_display: false
+  RSA.2:
+    name: South African First Division
+    to_display: false
+  RSA.MTN8:
+    name: MTN 8 Cup
+    to_display: false
+  RSA.NEDBANK:
+    name: South African Nedbank Cup
+    to_display: false
+  RUS.1:
+    name: Russian Premier League
+    to_display: false
+  SCO.1:
+    name: Scottish Premiership
+    to_display: false
+  SCO.1.PROMOTION.RELEGATION:
+    name: Scottish Premiership Promotion/Relegation Playoffs
+    to_display: false
+  SCO.2:
+    name: Scottish Championship
+    to_display: false
+  SCO.3:
+    name: Scottish League One
+    to_display: false
+  SCO.4:
+    name: Scottish League Two
+    to_display: false
+  SCO.CHALLENGE:
+    name: Scottish League Challenge Cup
+    to_display: false
+  SCO.CIS:
+    name: Scottish League Cup
+    to_display: false
+  SCO.TENNENTS:
+    name: Scottish Cup
+    to_display: false
+  SGP.1:
+    name: Singaporean Premier League
+    to_display: false
+  SLV.1:
+    name: Salvadoran Primera Division
+    to_display: false
+  SUI.1:
+    name: Swiss Super League
+    to_display: false
+  SWE.1:
+    name: Swedish Allsvenskanliga
+    to_display: false
+  THA.1:
+    name: Thai Premier League
+    to_display: false
+  TUR.1:
+    name: Turkish Super Lig
+    to_display: false
+  UEFA.CHAMPIONS:
+    name: UEFA Champions League
+    to_display: true
+  UEFA.CHAMPIONS_QUAL:
+    name: UEFA Champions League Qualifying
+    to_display: true
+  UEFA.EURO:
+    name: UEFA European Championship
+    to_display: true
+  UEFA.EURO.U19:
+    name: UEFA European Under-19 Championship
+    to_display: false
+  UEFA.EUROPA:
+    name: UEFA Europa League
+    to_display: true
+  UEFA.EUROPA.CONF_QUAL:
+    name: UEFA Europa Conference League Qualifying
+    to_display: false
+  UEFA.EUROPA_QUAL:
+    name: UEFA Europa League Qualifying
+    to_display: false
+  UEFA.EUROQ:
+    name: UEFA European Championship Qualifying
+    to_display: true
+  UEFA.EURO_U21:
+    name: UEFA European Under-21 Championship
+    to_display: false
+  UEFA.EURO_U21_QUAL:
+    name: UEFA European Under-21 Championship Qualifying
+    to_display: false
+  UEFA.NATIONS:
+    name: UEFA Nations League
+    to_display: true
+  UEFA.SUPER_CUP:
+    name: UEFA Super Cup
+    to_display: true
+  UEFA.WCHAMPIONS:
+    name: UEFA Women's Champions League
+    to_display: false
+  UEFA.WEURO:
+    name: Women's European Championship
+    to_display: false
+  UGA.1:
+    name: Ugandan Super League
+    to_display: false
+  URU.1:
+    name: Uruguayan Primera Division
+    to_display: false
+  USA.1:
+    name: Major League Soccer
+    to_display: true
+  USA.NASL:
+    name: North American Soccer League
+    to_display: false
+  USA.NCAA.M.1:
+    name: United States NCAA Men's Soccer
+    to_display: false
+  USA.NCAA.W.1:
+    name: United States NCAA Women's Soccer
+    to_display: false
+  USA.NWSL:
+    name: United States NWSL Women's League
+    to_display: true
+  USA.NWSL.CUP:
+    name: United States NWSL Challenge Cup
+    to_display: true
+  USA.OPEN:
+    name: United States Open Cup
+    to_display: true
+  USA.USL.1:
+    name: USL Championship
+    to_display: false
+  USA.USL.L1:
+    name: USL League One
+    to_display: false
+  VEN.1:
+    name: Venezuelan Primera Profesional
+    to_display: false
+  WAFU.NATIONS:
+    name: WAFU Cup of Nations
+    to_display: false
+  WAL.1:
+    name: Welsh Premier League
+    to_display: false
+  ZAM.1:
+    name: Zambian Super League
+    to_display: false
+  ZIM.1:
+    name: Zimbabwean Premiership
+    to_display: false

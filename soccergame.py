@@ -1,6 +1,5 @@
 from game import Game, Team
 import os
-import json
 from utility import custom_background, custom_text_color, ENDC
 
 
@@ -11,12 +10,16 @@ class SoccerGame(Game):
         self.awayTeam = SoccerTeam(self.c['competitors'][1], config)
         self.link = 'espn.com/soccer/match?gameId=' + event['id']
         if self.hasOdds:
-            away = self.odds[0]['awayTeamOdds']
-            home = self.odds[0]['homeTeamOdds']
-            draw = self.odds[0]['drawOdds']
-            self.awayOdds = self.extractOdds(away)
-            self.homeOdds = self.extractOdds(home)
-            self.drawOdds = self.extractOdds(draw)
+            if 'awayTeamOdds' in self.odds[0]:
+                away = self.odds[0]['awayTeamOdds']
+                self.awayOdds = self.extractOdds(away)
+                
+            if 'homeTeamOdds' in self.odds[0]:
+                home = self.odds[0]['homeTeamOdds']
+                self.homeOdds = self.extractOdds(home)
+            if 'drawOdds' in self.odds[0]:
+                draw = self.odds[0]['drawOdds']
+                self.drawOdds = self.extractOdds(draw)
 
     def extractOdds(self, odds: dict):
         if 'summary' in odds:
@@ -38,12 +41,12 @@ class SoccerTeam(Team):
         if self.name in custom:
             colors = custom[self.name]
             self.alternateColor = tuple(
-                int(colors['alt'][i:i+2], 16) for i in (0, 2, 4))
+                int(colors['background'][i:i+2], 16) for i in (0, 2, 4))
             self.color = tuple(
-                int(colors['color'][i:i+2], 16) for i in (0, 2, 4))
+                int(colors['text-color'][i:i+2], 16) for i in (0, 2, 4))
         elif (color and alt) and color != alt:
             config["colors"]["soccer"][self.name] = {
-                "alt": alt, "color": color}
+                "background": alt, "text-color": color}
             self.alternateColor = tuple(
                 int(color[i:i+2], 16) for i in (0, 2, 4))
             self.color = tuple(int(alt[i:i+2], 16) for i in (0, 2, 4))

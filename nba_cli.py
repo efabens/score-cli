@@ -2,13 +2,14 @@ import json
 import os
 from datetime import datetime
 from urllib import request
+import yaml
 
 from basketballgame import BasketballGame
 from utility import add_whitespace, custom_text_color, custom_background, ENDC, print_events, show_and_pop_all, stringify_events
 
 
-def process(game_event):
-    game1 = BasketballGame(game_event)
+def process(game_event, config: dict):
+    game1 = BasketballGame(game_event, config)
     event_info = []
     # print(game1.description, game1.period, game1.state, game1.detail)
     # top line
@@ -58,7 +59,14 @@ def run():
         headers={
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko)' +
                           ' Chrome/59.0.3071.115 Safari/537.36'}))
-    rawJson = json.loads(aRequest.read().decode('utf-8'))
+    val = aRequest.read().decode('utf-8')
+    try:
+        rawJson = json.loads(val)
+    except json.decoder.JSONDecodeError as e:
+        print(val[max(e.pos-5, 0):min(e.pos+5, len(val))])
+        print(e)
+        a = val.replace("¯\_(ツ)_/¯", "")
+        rawJson = json.loads(a)
 
     co = rawJson['content']
     group = co['sbGroup']
@@ -69,9 +77,24 @@ def run():
     # events = league['events']
     # event = events[0]
     events_to_print = data['events']
-    [process(i) for i in events_to_print]
 
-    return stringify_events([process(i) for i in events_to_print], 2)
+    config_file = (
+        os.path.realpath(__file__ + "/..") +
+        '/config.yaml')
+
+    if os.path.isfile(config_file):
+        with open(config_file, 'r+') as file:
+            config = yaml.safe_load(file)
+
+    config_changes = False
+
+    printable = stringify_events([process(i, config)
+                                  for i in events_to_print], 2)
+
+    with open(config_file, 'w+') as file:
+        yaml.dump(config, file)
+
+    return printable
 
 
 if __name__ == '__main__':

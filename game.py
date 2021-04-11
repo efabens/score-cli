@@ -34,12 +34,12 @@ class Team:
         self.shortDisplayName = team['team'].get('shortDisplayName')
         all_colors = self.get_colors()
         color_vals = all_colors.get(self.abbrev, all_colors['STANDARD'])
-        self.color = color_vals['color']
-        self.alternateColor = color_vals['alt']
+        self.color = color_vals['text-color']
+        self.alternateColor = color_vals['background']
         self.raw = team
 
     def get_colors(self):
-        return {"STANDARD": {"alt": (0, 0, 0), "color": (255, 255, 255)}}
+        return {"STANDARD": {"background": (0, 0, 0), "text-color": (255, 255, 255)}}
 
     def colorful_name(self):
         return self.name
